@@ -6,6 +6,11 @@ body {
     overflow: hidden;
 }
 
+@font-face{
+    font-family: Helvetica;
+    src: url(../fonts/Helvetica-Rounded-Bold.otf);
+
+}
 .container-fluid, .row {
     height: 100vh;
 }
@@ -17,7 +22,6 @@ body {
 .left-column, .right-column {
     flex: 1;
     background-color: #ffffff;
-    padding: 20px;
     overflow-y: hidden;
 }
 
@@ -27,6 +31,7 @@ body {
 
 .right-column {
     border-left: 1px solid #35D6ED;
+
 }
 
 .middle-column {
@@ -47,12 +52,12 @@ body {
 
 .sidebar ul {
     list-style-type: none;
-    padding: 50px;
     font-family: 'Helvetica Rounded', Helvetica, sans-serif;
 }
 
 .sidebar ul li {
-    margin-bottom: 30px;
+    font-size: 21px;  
+    margin-bottom: 30px;  
 }
 
 .sidebar ul li a {
@@ -63,16 +68,22 @@ body {
 }
 
 .logo img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin-top: -50px;
+    margin-left: 50px;
 }
 
 .nav-icon {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     margin-right: 10px;
 }
+
+.navIconHome{
+    font-size: 20px;
+}
+
 
 .footer-icon {
     width: 20px;
@@ -93,14 +104,14 @@ body {
 }
 
 .button-icon {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     margin-right: 10px;
 }
 
 .btn-create-post .button-icon {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     margin-right: 10px;
 }
 
@@ -113,27 +124,28 @@ body {
     align-items: center;
     justify-content: center;
     font-family: "Helvetica Rounded", Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 15px;
+
 }
 
 .btn-logout {
     background-color: #B23B3B;
-    width: 100px;
-    height: 34px;
-    margin-left: 50px;
+    width: 130px;
+    height: 40px;
+    margin-top: 50px;
 }
 
 .btn-create-post {
     background-color: #7091E6;
-    width: 170px;
-    height: 55px;
+    width: 150px;
+    height: 45px;
     font-size: 15px;
     margin-top: 50px;
     margin-left: 50px;
 }
 
 .search-bar input {
-    width: 80%;
+    width: 100%;
     height: 80%;
     margin: 10px 0;
     padding: 10px;
@@ -188,7 +200,7 @@ body {
     justify-content: flex-start;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #FFFFFF;
 }
 
 .announcement-box .card h6 {
@@ -226,11 +238,12 @@ body {
     width: 100%;
     margin-top: 10px;
     font-size: 10px;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .footer-content p {
     margin-bottom: 8px;
+    margin-right: 5px;
 }
 
 .footer .footer-link {
@@ -247,6 +260,7 @@ body {
     font-size: 10px;
     color: #007bff;
     text-decoration: none;
+    align-items: center;
 }
 
 .footer-content p a:hover {
@@ -274,11 +288,16 @@ body {
     }
 
     .announcement-tab h5 {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .nav-title{
+        display: none !important;
     }
 }
 
 @media (max-width: 480px) {
+
     .btn-create-post {
         width: 80%;
         font-size: 12px;
@@ -294,6 +313,7 @@ body {
     }
 
     .announcement-tab h5 {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
+
