@@ -63,9 +63,10 @@ body {
 }
 
 .logo img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin-top: -50px;
+    margin-left: 32px;
 }
 
 .nav-icon {
