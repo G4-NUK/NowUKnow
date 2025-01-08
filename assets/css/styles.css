@@ -290,9 +290,14 @@ body {
     .announcement-tab h5 {
         font-size: 12px;
     }
+
+    .nav-title{
+        display: none !important;
+    }
 }
 
 @media (max-width: 480px) {
+
     .btn-create-post {
         width: 80%;
         font-size: 12px;
