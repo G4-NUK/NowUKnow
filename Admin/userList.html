@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <title>NowUKnow</title>
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-3 left-column">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="#">NowUKnow</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarNav"
+                        aria-controls="sidebarNav" aria-expanded="false" aria-label="Toggle sidebar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+                <div class="collapse navbar-collapse" id="sidebarNav">
+                    <div class="sidebar">
+                        <ul>
+                            <li>
+                                <a href="adminDashBoard.html"><span class="nav-title">Dashboard</span></a>
+                            </li>
+                            <li>
+                                <a href="userManager.html"><span class="nav-title">User Manager</span></a>
+                            </li>
+                            <li>
+                                <a href="userList.html"><span class="nav-title">User List</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="logout-button">
+                        <button class="btn-logout">Log Out</button>
+                    </div>
+                </div>
+
+                <div class="sidebar d-none d-md-block">
+                    <ul>
+                        <li>
+                            <a href="adminDashBoard.html"><span class="nav-title">Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a href="userManager.html"><span class="nav-title">User Manager</span></a>
+                        </li>
+                        <li>
+                            <a href="userList.html"><span class="nav-title">User List</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logout-button d-none d-md-block">
+                    <button class="btn-logout">Log Out</button>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-9 right-column">
+                <nav class="custom-navbar">
+                    <div class="container-fluid d-flex align-items-center justify-content-between">
+                        <span class="nav-title">User List</span>
+                        <form class="search-form" role="search">
+                            <div class="input-group rounded-search">
+                                <span class="input-group-text search-icon">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control search-input" placeholder="Search"
+                                    aria-label="Search" />
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+
+                <div class="content">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card px-3">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mt-2">
+                                        <thead>
+                                            <tr class>
+                                                <th scope="col">First Name</th>
+                                                <th scope="col">Last Name</th>
+                                                <th scope="col">Birth Date</th>
+                                                <th scope="col">Email</th>
+    
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-light">
+                                            <tr>
+                                                <td>John</td>
+                                                <td>Doe</td>
+                                                <td>February 1, 2004</td>
+                                                <td>john@doe.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jane</td>
+                                                <td>Doe</td>
+                                                <td>January 1, 2004</td>
+                                                <td>jane@doe.com</td>
+                                                <!-- <td colspan='6'>No records found</td> -->
+                                            </tr>
+                                            <tr>
+                                                <td>Sean</td>
+                                                <td>Doe</td>
+                                                <td>March 1, 2004</td>
+                                                <td>sean@doe.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>April</td>
+                                                <td>Doe</td>
+                                                <td>April 1, 2004</td>
+                                                <td>april@doe.com</td>
+                                            </tr>
+    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap Script -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
