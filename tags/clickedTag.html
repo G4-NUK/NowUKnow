@@ -30,12 +30,10 @@
 
     .row {
         display: flex;
-
     }
 
     .left-column {
         flex: 0.5;
-        flex-wrap: wrap;
         background-color: #ffffff;
         overflow-y: hidden;
     }
@@ -99,12 +97,6 @@
     }
 
 
-    .button-icon {
-        width: 35px;
-        height: 35px;
-        margin-right: 10px;
-    }
-
     .btn-logout {
         color: white;
         border: none;
@@ -125,9 +117,18 @@
         margin-top: 50px;
     }
 
+
+
     .content {
         height: 200vh;
         padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+
+        .nav-title {
+            display: none !important;
+        }
     }
 
     .middle-column .navbar {
@@ -152,25 +153,16 @@
         border-bottom: 1px solid #35D6ED;
     }
 
+    @media (max-width: 768px) {
+        .middle-column .navbar-nav {
+            flex-direction: row;
+            justify-content: center;
+            gap: 1rem;
+        }
 
-    .card {
-        border-radius: 15px !important;
-        overflow: hidden;
-    }
-
-    .card-img-top {
-        border-radius: 15px 15px 0 0 !important;
-    }
-
-    .card-body {
-        background-color: #35D6ED;
-    }
-
-    .card-text {
-        font-family: 'Helvetica Rounded', sans-serif;
-        font-size: 1rem;
-        color: white;
-        text-decoration: none !important;
+        .middle-column .nav-link {
+            font-size: 0.9rem;
+        }
     }
 
     .custom-card {
@@ -273,6 +265,23 @@
         border-radius: 10px;
     }
 
+    .comment-card {
+        border-radius: 10px;
+        background-color: #e1faff;
+        border-color: #e1faff;
+    }
+
+    .comment p {
+        margin: 0;
+        font-size: 13px;
+        color: #333;
+
+    }
+
+    .comment-card-header {
+        background-color: #e1faff;
+    }
+
     @media (max-width: 1000px) {
         .custom-card {
             max-width: 100%;
@@ -350,24 +359,6 @@
         }
 
     }
-
-    @media (max-width: 768px) {
-        .middle-column .navbar-nav {
-            flex-direction: row;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .middle-column .nav-link {
-            font-size: 0.9rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .nav-title {
-            display: none !important;
-        }
-    }
 </style>
 
 <body>
@@ -381,20 +372,18 @@
                 </div>
                 <div class="sidebar">
                     <ul>
-                        <li><a href="../index.html"><img src="../assets/icons/home.svg" alt="Home" class="nav-icon"><span
+                        <li><a href="home.html"><img src="../assets/icons/home.svg" alt="Home" class="nav-icon"><span
                                     class="nav-title">Home</span></p></a></li>
                         <li><a href="profile.html"><img src="../assets/icons/profile.svg" alt="Profile"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Profile</span></a>
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
                         </li>
                         <li><a href="tags.html"><img src="../assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span
-                                    class="nav-title"><span class="nav-title">Tags</span></a></li>
+                                    class="nav-title"><span class="nav-title">Home</span></a></li>
                         <li><a href="notification.html"><img src="../assets/icons/notification.svg" alt="Notification"
-                                    class="nav-icon"><span class="nav-title"><span
-                                        class="nav-title">Notification</span></a>
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
                         </li>
                         <li><a href="bookmarks.html"><img src="../assets/icons/bookmark.svg" alt="Bookmarks"
-                                    class="nav-icon"><span class="nav-title"><span
-                                        class="nav-title">Bookmarks</span></a>
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
                         </li>
                     </ul>
                 </div>
@@ -404,7 +393,7 @@
             </div>
 
             <!-- Middle Column -->
-            <div class="col-md-9 middle-column px-0">
+            <div class="col-md-6 middle-column px-0">
 
                 <nav class="navbar navbar-expand-md navbar-light bg-light">
                     <div class="container">
@@ -412,8 +401,7 @@
                     </div>
                 </nav>
 
-
-                <div class="content px-3">
+                <div class="content">
                     <div class="container">
                         <div class="card custom-card">
                             <!-- user -->
@@ -447,8 +435,9 @@
                                 <!-- bottom buttons -->
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex">
-                                        <span class="bottom-buttons icon-button" onclick="toggleCommentInput(this)">
-                                            <img src="../assets/icons/comment.svg" class="me-1">Comment
+                                        <span class="bottom-buttons icon-button" data-bs-toggle="modal"
+                                            data-bs-target="#cardModal">
+                                            <img src="../assets/icons/comment.svg" class="me-1">Comments
                                         </span>
                                         <span class="bottom-buttons icon-button" onclick="toggleActive(this)">
                                             <img src="../assets/icons/bookmark2.svg" class="me-1">Bookmark
@@ -473,16 +462,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- collapsable comment -->
-                            <div class="comment-input-container" style="background-color:#C9F6FF">
-                                <form method="POST">
-                                    <div class="mb-3">
-                                        <textarea class="form-control body-text" name="comment" rows="3"
-                                            placeholder="Write a comment..."></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary my-1 ms-1">Comment</button>
-                                </form>
-                            </div>
+
                         </div>
                         <!-- modal large view with edit/delete button -->
                         <div class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="cardModalLabel"
@@ -533,7 +513,8 @@
                                                         </span>
                                                         <span class="bottom-buttons icon-button"
                                                             onclick="toggleActive(this)">
-                                                            <img src="../assets/icons/bookmark2.svg" class="me-1">Bookmark
+                                                            <img src="../assets/icons/bookmark2.svg"
+                                                                class="me-1">Bookmark
                                                         </span>
                                                     </div>
                                                     <div class="d-flex">
@@ -562,38 +543,55 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <!-- collapsible comment -->
                                             <div class="comment-input-container" style="background-color:#C9F6FF">
                                                 <form method="POST">
                                                     <div class="mb-3">
-                                                        <textarea class="form-control body-text" name="comment" rows="3"
+                                                        <textarea class="form-control body-text" name="comment" rows="5"
                                                             placeholder="Write a comment..."></textarea>
                                                     </div>
                                                     <button type="submit"
                                                         class="btn btn-primary my-1 ms-1">Comment</button>
                                                 </form>
+                                                <div>
+                                                    <h5 class="body-text mt-5 ms-2" style="color: #808080;">Comments
+                                                    </h5>
+                                                </div>
+
+                                                <!-- Comments Section -->
+                                                <div class="comment-list text-break">
+                                                    <div class="card comment-card mb-2 body-text">
+                                                        <div class="comment-card-header d-flex align-items-center ms-3 mt-3"
+                                                            style="border-color:white">
+                                                            <img src="../assets/imgs/pfp.jpg" class="profile-pic me-1">
+                                                            <div>
+                                                                <h6 class="mb-0 profile-text">jdoe</h6>
+                                                            </div>
+                                                        </div>
+                                                        <p class="ms-5 me-3 p-2">Lorem ipsum dolor sit amet consectetur
+                                                            adipisicing elit.
+                                                            Laboriosam atque voluptates odit asperiores delectus. Nisi
+                                                            fugit, quam pariatur magni quod nostrum, minus eaque,
+                                                            reiciendis magnam quo aut ipsum tempora architecto?</p>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        
-
                     </div>
-
                 </div>
-
             </div>
         </div>
-
-
-    </div>
     </div>
 
-      <!-- JS Post -->
-      <script src="../assets/js/post.js"></script>
+
+    <!-- JS Post -->
+    <script src="../assets/js/post.js"></script>
     <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
