@@ -110,6 +110,23 @@
         border-radius: 10px;
     }
 
+    .comment-card {
+        border-radius: 10px;
+        background-color: #e1faff;
+        border-color: #e1faff;
+    }
+
+    .comment p {
+        margin: 0;
+        font-size: 13px;
+        color: #333;
+
+    }
+
+    .comment-card-header {
+        background-color: #e1faff;
+    }
+
     @media (max-width: 1000px) {
         .custom-card {
             max-width: 100%;
@@ -270,8 +287,9 @@
                                 <!-- bottom buttons -->
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex">
-                                        <span class="bottom-buttons icon-button" onclick="toggleCommentInput(this)">
-                                            <img src="assets/icons/comment.svg" class="me-1">Comment
+                                        <span class="bottom-buttons icon-button" data-bs-toggle="modal"
+                                            data-bs-target="#cardModal">
+                                            <img src="assets/icons/comment.svg" class="me-1">Comments
                                         </span>
                                         <span class="bottom-buttons icon-button" onclick="toggleActive(this)">
                                             <img src="assets/icons/bookmark2.svg" class="me-1">Bookmark
@@ -296,18 +314,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- collapsable comment -->
-                            <div class="comment-input-container" style="background-color:#C9F6FF">
-                                <form method="POST">
-                                    <div class="mb-3">
-                                        <textarea class="form-control body-text" name="comment" rows="3"
-                                            placeholder="Write a comment..."></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary my-1 ms-1">Comment</button>
-                                </form>
-                            </div>
+
                         </div>
-<!-- modal large view with edit/delete button -->
+                        <!-- modal large view with edit/delete button -->
                         <div class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="cardModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-lg">
@@ -385,16 +394,40 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <!-- collapsible comment -->
                                             <div class="comment-input-container" style="background-color:#C9F6FF">
                                                 <form method="POST">
                                                     <div class="mb-3">
-                                                        <textarea class="form-control body-text" name="comment" rows="3"
+                                                        <textarea class="form-control body-text" name="comment" rows="5"
                                                             placeholder="Write a comment..."></textarea>
                                                     </div>
                                                     <button type="submit"
                                                         class="btn btn-primary my-1 ms-1">Comment</button>
                                                 </form>
+                                                <div>
+                                                    <h5 class="body-text mt-5 ms-2" style="color: #808080;">Comments
+                                                    </h5>
+                                                </div>
+
+                                                <!-- Comments Section -->
+                                                <div class="comment-list text-break">
+                                                    <div class="card comment-card mb-2 body-text">
+                                                        <div class="comment-card-header d-flex align-items-center ms-3 mt-3"
+                                                            style="border-color:white">
+                                                            <img src="assets/imgs/pfp.jpg" class="profile-pic me-1">
+                                                            <div>
+                                                                <h6 class="mb-0 profile-text">jdoe</h6>
+                                                            </div>
+                                                        </div>
+                                                        <p class="ms-5 me-3 p-2">Lorem ipsum dolor sit amet consectetur
+                                                            adipisicing elit.
+                                                            Laboriosam atque voluptates odit asperiores delectus. Nisi
+                                                            fugit, quam pariatur magni quod nostrum, minus eaque,
+                                                            reiciendis magnam quo aut ipsum tempora architecto?</p>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
