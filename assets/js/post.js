@@ -1,37 +1,40 @@
+// button change color
+function setRating(rating, container) {
+    const stars = container.querySelectorAll('.star img');
 
-function setRating(rating) {
-    let stars = document.querySelectorAll('.star');
-
-    // Loop through all the stars and set their active state
     stars.forEach((star, index) => {
-        const img = star.querySelector('img');
         if (index < rating) {
-            img.classList.add('active');
-            img.classList.remove('inactive');
+            star.classList.add('active');
+            star.classList.remove('inactive');
         } else {
-            img.classList.remove('active');
-            img.classList.add('inactive');
+            star.classList.remove('active');
+            star.classList.add('inactive');
         }
     });
 }
 
-// colapsable comment
+// modal
+document.addEventListener('click', function (event) {
+    const starElement = event.target.closest('.star img');
+
+    if (starElement) {
+        const container = starElement.closest('.custom-card, .modal-body');
+
+        const stars = Array.from(container.querySelectorAll('.star img'));
+        const clickedIndex = stars.indexOf(starElement);
+
+        setRating(clickedIndex + 1, container);
+    }
+});
+// collapsable comment
 function toggleCommentInput(button) {
     const commentInputContainer = button.closest('.custom-card').querySelector('.comment-input-container');
-    commentInputContainer.style.display = (commentInputContainer.style.display === "none" || commentInputContainer.style.display === "") ? "block" : "none";
+    commentInputContainer.style.display = 
+        (commentInputContainer.style.display === "none" || commentInputContainer.style.display === "") ? 
+        "block" : 
+        "none";
 }
 
 function toggleActive(button) {
     button.classList.toggle('active');
-}
-
-function setRating(rating) {
-    const stars = document.querySelectorAll('.star img');
-    stars.forEach((star, index) => {
-        if (index < rating) {
-            star.classList.add('active');
-        } else {
-            star.classList.remove('active');
-        }
-    });
 }
