@@ -9,6 +9,163 @@
     <title>NowUKnow</title>
 </head>
 
+<style>
+    .custom-card {
+        width: 100%;
+        max-width: auto;
+        margin: auto;
+        background-color: #C9F6FF;
+        border-color: white;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    .title-text {
+        font-size: 30px;
+        font-family: "Helvetica";
+        letter-spacing: 3px;
+    }
+
+    .body-text {
+        font-size: 15px;
+        font-family: "Helvetica";
+        letter-spacing: 1px;
+        line-height: 21px;
+    }
+
+    .profile-text {
+        font-size: 20px;
+        font-family: "Helvetica Rounded";
+    }
+
+    .btn-primary {
+        border-radius: 50px;
+        border-color: transparent;
+        height: 30px;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Helvetica Rounded";
+        background-color: #7091E6;
+    }
+
+    .bottom-buttons {
+        font-family: "Helvetica Rounded";
+        font-size: 15px;
+        color: #808080;
+        cursor: pointer;
+    }
+
+    .star-icon {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .star img {
+        filter: grayscale(100%) brightness(80%);
+    }
+
+    .star img.active {
+        filter: brightness(100%) saturate(100%) invert(22%) sepia(36%) saturate(408%) hue-rotate(195deg) brightness(98%) contrast(102%);
+    }
+
+    .star.inactive img {
+        filter: grayscale(100%) brightness(80%);
+    }
+
+    .star {
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .icon-button.active {
+        filter: brightness(100%) saturate(100%) invert(22%) sepia(36%) saturate(408%) hue-rotate(195deg) brightness(98%) contrast(102%);
+    }
+
+    .icon-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .bottom-buttons:hover {
+        color: #5a5a5a;
+    }
+
+    .comment-input-container {
+        display: none;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 900px) {
+        .custom-card {
+            max-width: 100%;
+        }
+
+        .bottom-buttons {
+            font-size: 0;
+        }
+    }
+
+    @media (max-width: 720px) {
+        .custom-card {
+            max-width: 100%;
+        }
+
+        .bottom-buttons {
+            font-size: 0;
+        }
+
+        .title-text {
+            font-size: 20px;
+        }
+
+        .body-text {
+            font-size: 13px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .custom-card {
+            max-width: 100%;
+        }
+
+        .title-text {
+            font-size: 24px;
+        }
+
+        .body-text {
+            font-size: 12px;
+        }
+
+        .bottom-buttons {
+            font-size: 0;
+        }
+
+        .maximize-btn {
+            display: none;
+        }
+
+        .btn-primary {
+            height: 25px;
+            font-size: 12px;
+        }
+    }
+</style>
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -20,14 +177,19 @@
                 </div>
                 <div class="sidebar">
                     <ul>
-                        <li><a href="home.html"><img src="assets/icons/home.svg" alt="Home" class="nav-icon"><span class="nav-title">Home</span></p></a></li>
+                        <li><a href="home.html"><img src="assets/icons/home.svg" alt="Home" class="nav-icon"><span
+                                    class="nav-title">Home</span></p></a></li>
                         <li><a href="profile.html"><img src="assets/icons/profile.svg" alt="Profile"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a></li>
-                        <li><a href="tags.html"><img src="assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a></li>
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
+                        </li>
+                        <li><a href="tags.html"><img src="assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span
+                                    class="nav-title"><span class="nav-title">Home</span></a></li>
                         <li><a href="notification.html"><img src="assets/icons/notification.svg" alt="Notification"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a></li>
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
+                        </li>
                         <li><a href="bookmarks.html"><img src="assets/icons/bookmark.svg" alt="Bookmarks"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a></li>
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="logout-button">
@@ -37,12 +199,13 @@
 
             <!-- Middle Column -->
             <div class="col-md-6 middle-column">
-                
+
                 <nav class="navbar navbar-expand-md navbar-light bg-light mb-3">
                     <div class="container">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link active fw-bold" href="#">For You</a></li>
+                                <a class="nav-link active fw-bold" href="#">For You</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link fw-bold" href="#">Following</a>
                             </li>
@@ -51,56 +214,73 @@
                 </nav>
 
                 <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="container">
+                        <div class="card custom-card">
+        <!-- user -->
+                            <div class="card-header d-flex align-items-center p-3" style="border-color:white">
+                                <img src="assets/imgs/pfp.jpg" class="profile-pic me-1">
+                                <div>
+                                    <h6 class="mb-0 profile-text">jdoe</h6>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary ms-1 follow-btn">Follow</button>
+                                </div>
+                                <div class="ms-auto d-flex align-items-center">
+                                    <button class="btn maximize-btn"><img src="assets/icons/maximize.svg"></button>
+                                </div>
+                            </div>
+        <!-- uploaded media -->
+                            <img src="assets/imgs/test.jpg" class="card-img-top">
+        <!-- body -->
+                            <div class="card-body">
+                                <h2 class="card-text title-text p-1">Title</h2>
+                                <p class="card-text body-text px-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    Blanditiis veniam
+                                    at ipsum, voluptatem dignissimos laboriosam accusantium, deserunt expedita voluptatum
+                                    voluptate architecto magni, rem quas quia. Temporibus sint suscipit ut aliquid!</p>
+        
+                                    <button class="btn btn-primary follow-btn ms-1 mt-0 mb-2" style="background-color: #808080;">#quote</button>
+        <!-- bottom buttons -->
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex">
+                                        <span class="bottom-buttons icon-button" onclick="toggleCommentInput(this)">
+                                            <img src="assets/icons/comment.svg" class="me-1">Comment
+                                        </span>
+                                        <span class="bottom-buttons icon-button" onclick="toggleActive(this)">
+                                            <img src="assets/icons/bookmark2.svg" class="me-1">Bookmark
+                                        </span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="star" onclick="setRating(1)">
+                                            <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                        </div>
+                                        <div class="star" onclick="setRating(2)">
+                                            <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                        </div>
+                                        <div class="star" onclick="setRating(3)">
+                                            <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                        </div>
+                                        <div class="star" onclick="setRating(4)">
+                                            <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                        </div>
+                                        <div class="star" onclick="setRating(5)">
+                                            <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        <!-- collapsable comment -->
+                            <div class="comment-input-container" style="background-color:#C9F6FF">
+                                <form method="POST">
+                                    <div class="mb-3">
+                                        <textarea class="form-control" name="comment" rows="3"
+                                            placeholder="Write a comment..."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary my-1 ms-1">Comment</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -132,16 +312,17 @@
                 <!-- Footer Section -->
                 <footer class="footer">
                     <div class="footer-content">
-                        <p class="text-center"><img src="assets/icons/Copyright.svg" class="footer-icon" alt="icon" width="20" height="20">2025
+                        <p class="text-center"><img src="assets/icons/Copyright.svg" class="footer-icon" alt="icon"
+                                width="20" height="20">2025
                             NowUKnow Corp. All Rights Reserved</p>
-                        
-                            <p class="text-center">
+
+                        <p class="text-center">
                             <a href="terms.php" class="footer-link">Terms of Services</a> |
                             <a href="privacy.php" class="footer-link">Privacy Policy</a> |
                             <a href="about.php" class="footer-link">About</a>
                         </p>
                         <p>
-              
+
                     </div>
                 </footer>
 
@@ -154,10 +335,12 @@
         </div>
     </div>
 
+    <!-- JS Post -->
+    <script src="assets/js/post.js"></script>
     <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
