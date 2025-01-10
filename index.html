@@ -20,30 +20,6 @@
         transition: all 0.3s ease;
     }
 
-    .profile-pic {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-    }
-
-    .title-text {
-        font-size: 30px;
-        font-family: "Helvetica";
-        letter-spacing: 3px;
-    }
-
-    .body-text {
-        font-size: 15px;
-        font-family: "Helvetica";
-        letter-spacing: 1px;
-        line-height: 21px;
-    }
-
-    .profile-text {
-        font-size: 20px;
-        font-family: "Helvetica Rounded";
-    }
-
     .btn-primary {
         border-radius: 50px;
         border-color: transparent;
@@ -54,156 +30,8 @@
         justify-content: center;
         font-family: "Helvetica Rounded";
         background-color: #7091E6;
-    }
-
-    .bottom-buttons {
-        font-family: "Helvetica Rounded";
-        font-size: 15px;
-        color: #808080;
-        cursor: pointer;
-    }
-
-    .star-icon {
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-    }
-
-    .star img {
-        filter: grayscale(100%) brightness(80%);
-    }
-
-    .star img.active {
-        filter: brightness(100%) saturate(100%) invert(22%) sepia(36%) saturate(408%) hue-rotate(195deg) brightness(98%) contrast(102%);
-    }
-
-    .star.inactive img {
-        filter: grayscale(100%) brightness(80%);
-    }
-
-    .star {
-        display: inline-block;
-        margin-right: 5px;
-    }
-
-    .icon-button.active {
-        filter: brightness(100%) saturate(100%) invert(22%) sepia(36%) saturate(408%) hue-rotate(195deg) brightness(98%) contrast(102%);
-    }
-
-    .icon-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        padding: 5px;
-    }
-
-    .bottom-buttons:hover {
-        color: #5a5a5a;
-    }
-
-    .comment-input-container {
-        display: none;
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #f1f1f1;
-        border-radius: 10px;
-    }
-
-    .comment-card {
-        border-radius: 10px;
-        background-color: #e1faff;
-        border-color: #e1faff;
-    }
-
-    .comment p {
-        margin: 0;
-        font-size: 13px;
-        color: #333;
-
-    }
-
-    .comment-card-header {
-        background-color: #e1faff;
-    }
-
-    @media (max-width: 1000px) {
-        .custom-card {
-            max-width: 100%;
-        }
-
-
-        .button-text {
-            font-size: 0;
-        }
-    }
-
-    @media (max-width: 995px) {
-        .custom-card {
-            max-width: 100%;
-        }
-
-        .bottom-buttons {
-            font-size: 0;
-        }
-
-        .button-text {
-            font-size: 0;
-        }
-    }
-
-    @media (max-width: 720px) {
-        .custom-card {
-            max-width: 100%;
-        }
-
-        .bottom-buttons {
-            font-size: 0;
-        }
-
-        .title-text {
-            font-size: 20px;
-        }
-
-        .body-text {
-            font-size: 13px;
-        }
-
-        .button-text {
-            font-size: 0;
-        }
-
-    }
-
-
-
-    @media (max-width: 576px) {
-        .custom-card {
-            max-width: 100%;
-        }
-
-        .title-text {
-            font-size: 24px;
-        }
-
-        .body-text {
-            font-size: 12px;
-        }
-
-        .bottom-buttons {
-            font-size: 0;
-        }
-
-        .btn-primary {
-            height: 25px;
-            font-size: 12px;
-        }
-
-        .button-text {
-            font-size: 0;
-        }
-
-    }
+        border-color: transparent;
+    }  
 </style>
 
 <body>
@@ -219,20 +47,20 @@
                     <ul>
                         <li><a href="home.html"><img src="assets/icons/home.svg" alt="Home" class="nav-icon"><span
                                     class="nav-title">Home</span></p></a></li>
-                        <li><a href="./users/profile.html"><img src="assets/icons/profile.svg" alt="Profile"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Profile</span></a>
+                        <li><a href="profile.html"><img src="assets/icons/profile.svg" alt="Profile"
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
                         </li>
                         <li><a href="tags.html"><img src="assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span
-                                    class="nav-title"><span class="nav-title">Tags</span></a></li>
+                                    class="nav-title"><span class="nav-title">Home</span></a></li>
                         <li><a href="notification.html"><img src="assets/icons/notification.svg" alt="Notification"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Notification</span></a>
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
                         </li>
                         <li><a href="bookmarks.html"><img src="assets/icons/bookmark.svg" alt="Bookmarks"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Bookmarks</span></a>
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
                         </li>
                     </ul>
                 </div>
-                <div class="logout-container">
+                <div class="logout-button">
                     <button class="btn-logout">Log Out</button>
                 </div>
             </div>
