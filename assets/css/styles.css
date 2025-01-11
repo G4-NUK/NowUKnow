@@ -216,7 +216,7 @@ body {
 }
 
 .btn-logout,
-.btn-create-post {
+.btn-create-post{
     color: white;
     border: none;
     border-radius: 50px;
@@ -227,6 +227,23 @@ body {
     font-family: "Helvetica Rounded", Helvetica, sans-serif;
     font-size: 15px;
 
+}
+
+.middle-btn-create-post{
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.middle-btn-create-post img{
+    width: 20px ;
+    height: 20px;
+    margin-left: 10px;
 }
 
 .logout-container {
@@ -251,6 +268,15 @@ body {
     margin-left: 50px;
 }
 
+.middle-btn-create-post {
+    background-color: #7091E6;
+    width: 70px;
+    height: 45px;
+    font-size: 15px;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
 .search-bar input {
     width: 100%;
     height: 80%;
@@ -260,6 +286,15 @@ body {
     border: 1px solid #ccc;
 }
 
+
+.middle-search-bar input {
+    width: 100%;
+    height: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
 .announcement-box {
     height: auto;
     display: flex;
@@ -403,6 +438,7 @@ body {
     color: #007bff;
 }
 
+
 @media (max-width: 768px) {
     .middle-column .navbar-nav {
         flex-direction: row;
@@ -415,11 +451,35 @@ body {
     }
 }
 
+@media (max-width: 1500px){
+    .middle-search-bar {
+        display:none;
+    }
+    .middle-btn-create-post{
+        display:none;
+    }
+
+}
+
+@media (max-width: 800px){
+    .middle-search-bar {
+        display:block;
+    }
+
+    .middle-btn-create-post {
+        display:block;
+    }
+}
+
 @media (max-width: 768px) {
     .btn-create-post {
         width: 100%;
         font-size: 14px;
         height: 45px;
+    }
+
+    .right-column{
+        display:none;
     }
 
     .announcement-box {
@@ -437,6 +497,8 @@ body {
     .nav-title {
         display: none !important;
     }
+
+    
 }
 
 @media (max-width: 480px) {
@@ -448,7 +510,7 @@ body {
     }
 
     .announcement-box {
-        padding: 10px;
+        display:none;
     }
 
     .announcement-tab {
@@ -458,6 +520,7 @@ body {
     .announcement-tab h5 {
         font-size: 10px;
     }
+
 }
 
 
@@ -575,6 +638,8 @@ body {
     .button-text {
         font-size: 0;
     }
+
+
 }
 
 @media (max-width: 995px) {
@@ -641,5 +706,8 @@ body {
     .button-text {
         font-size: 0;
     }
+    
+
+
 
 }
