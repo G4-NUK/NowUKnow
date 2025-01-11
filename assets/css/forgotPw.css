@@ -24,14 +24,12 @@ p {
 
 .headerSection h1 {
     text-align: start;
-    font-size: 45px;
     color: white;
     font-family: "Helvetica Rounded";
 }
 
 .headerSection h6 {
     text-align: start;
-    font-size: 15px;
     color: white;
 }
 
@@ -71,6 +69,26 @@ p {
     text-align: center;
     display: inline-block;
     line-height: 30px;
+}
+
+@media (max-width: 990px) {
+    .logoWordmark img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
+        margin-top: 200px;
+    }
+
+    .logoWordmark{
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        max-width: 350px !important;
+    }
+    
 }
 
 @media (max-width: 768px) {

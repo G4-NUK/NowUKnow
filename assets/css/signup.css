@@ -37,14 +37,12 @@ p {
 
 .headerSection h1 {
     text-align: start;
-    font-size: 45px;
     font-family: "Helvetica Rounded";
     color: white;
 }
 
 .headerSection h6 {
     text-align: start;
-    font-size: 15px;
     color: white;
 }
 
@@ -104,6 +102,8 @@ p {
     .headerSection {
         order: 0;
         display: none;
+        padding-bottom: 10px;
+        margin-top: 50px;
     }
 
     .card {
@@ -162,5 +162,21 @@ p {
 
     .btnLearnMore {
         margin-top: 100px;
+    }
+
+    .logoWordmark img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .logoWordmark{
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        max-width: 350px !important;
     }
 }

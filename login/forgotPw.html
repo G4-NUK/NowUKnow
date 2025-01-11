@@ -30,9 +30,8 @@
             border-radius: 20px;
             padding: 30px;
             width: 100%;
-            max-width: 380px;
+            max-width: 400px;
             height: auto;
-            margin: 70px auto 30px 90px;
         }
 
         .btnLogin {
@@ -92,16 +91,16 @@
 </head>
 
 <body>
-    <div class="container" id="container">
+    <div class="container-fluid" id="container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-6 col-12 col-sm-0 d-flex align-items-start">
+            <div class="col-lg-6 col-12 col-sm-0 p-0 mt-5 d-flex align-items-bottom justify-content-center">
                 <div class="leftSection">
                     <div class="logoWordmark">
                         <img src="../assets/icons/logowordmark.svg" alt="logowordmark">
                     </div>
-                    <div class="headerSection d-flex flex-column text-start pb-5">
-                        <h1>Forgot Password?</h1>
-                        <h6>Change new password</h6>
+                    <div class="headerSection p-0 d-flex flex-column text-start">
+                        <h1 class="h1 fs-1 fs-md-2 fs-sm-3 m-0">Forgot Password?</h1>
+                        <h6 class="fs-6 fs-md-5 m-0 p-2">Change new password</h6>
                     </div>
 
                     <div class="col-lg-12 col-12 text-center">
@@ -117,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
+            <div class="col-lg-6 col-12 p-0 d-flex align-items-center justify-content-center">
                 <div class="card">
                     <div class="h3 my-4 mt-0 text-center signUpTittle">Reset your Password</div>
                     <form id="ForgotPwForm" method="POST">
@@ -152,11 +151,11 @@
             <!-- Modal for learn more (small version)-->
             <div class="col-lg-6 col-12 text-center">
                 <div class="info2">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo quia maiores,
+                    <p class="infoContent py-4 px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo quia maiores,
                         soluta iusto eveniet delectus illo non laudantium inventore alias ipsam saepe tempora omnis rem
                         eum
                         vel quis animi?</p>
-                    <button type="button" class="btnLearnMore mt-3" data-bs-toggle="modal"
+                    <button type="button" class="btnLearnMore my-4 mx-5" data-bs-toggle="modal"
                         data-bs-target="#learnMore">Learn More?</button>
                 </div>
             </div>
