@@ -103,13 +103,14 @@
                 </div>
                 <div class="sidebar">
                     <ul>
-                        <li><a href="../index.html"><img src="../assets/icons/home.svg" alt="Home" class="nav-icon"><span
-                                    class="nav-title">Home</span></p></a></li>
+                        <li><a href="../index.html"><img src="../assets/icons/home.svg" alt="Home"
+                                    class="nav-icon"><span class="nav-title">Home</span></p></a></li>
                         <li><a href="users/profile.html"><img src="../assets/icons/profile.svg" alt="Profile"
                                     class="nav-icon"><span class="nav-title"><span class="nav-title">Profile</span></a>
                         </li>
-                        <li><a href="../tags/explore.html"><img src="../assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span
-                                    class="nav-title"><span class="nav-title">Tags</span></a></li>
+                        <li><a href="../tags/explore.html"><img src="../assets/icons/hashtag.svg" alt="Tags"
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Tags</span></a>
+                        </li>
                         <li><a href="../notif.html"><img src="../assets/icons/notification.svg" alt="Notification"
                                     class="nav-icon"><span class="nav-title"><span
                                         class="nav-title">Notification</span></a>
@@ -234,13 +235,25 @@
                             </div>
                             <div class="col-7 ps-4 d-flex flex-row justify-content-center align-items-center">
                                 <div class="pictureUpload mx-3">
-                                    <img src="../assets/icons/photo icon.svg">
+                                    <label for="pictureInput">
+                                        <img src="../assets/icons/photo icon.svg" style="cursor: pointer">
+                                    </label>
+                                    <input type="file" id="pictureInput" name="pictureFile" class="form-control d-none"
+                                        accept=".png, .jpg">
                                 </div>
                                 <div class="videoUpload mx-3">
-                                    <img src="../assets/icons/video.svg">
+                                    <label for="videoInput">
+                                        <img src="../assets/icons/video.svg" style="cursor: pointer">
+                                    </label>
+                                    <input type="file" id="videoInput" name="videoFile" class="form-control d-none"
+                                        accept=".mp4, .mov">
                                 </div>
                                 <div class="fileUpload mx-3">
-                                    <img src="../assets/icons/file.svg">
+                                    <label for="fileInput">
+                                        <img src="../assets/icons/file.svg" style="cursor: pointer">
+                                    </label>
+                                    <input type="file" id="fileInput" name="fileUpload" class="form-control d-none"
+                                        accept=".pdf, .doc, .docx">
                                 </div>
                             </div>
                         </div>
