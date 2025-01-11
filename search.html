@@ -193,17 +193,195 @@
                         </div>
                         <div class="users-section">
                             <h2>Posts</h2>
-                            <div class="user-card">
-                                <img src="assets/imgs/pfp.jpg" alt="Profile Picture">
-                                <div class="user-info">
-                                    <h6>John Doe</h6>
-                                    <p>@jdoe</p>
+                            
+                            <div class="content">
+                                <div class="container">
+                                    <div class="card custom-card">
+                                        <!-- user -->
+                                        <div class="card-header d-flex align-items-center p-3" style="border-color:white">
+                                            <img src="assets/imgs/pfp.jpg" class="profile-pic me-1">
+                                            <div>
+                                                <h6 class="mb-0 profile-text">jdoe</h6>
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-primary ms-1 follow-btn">Follow</button>
+                                            </div>
+                                            <div class="ms-auto d-flex align-items-center">
+                                                <button class="btn maximize-btn" data-bs-toggle="modal"
+                                                    data-bs-target="#cardModal"><img src="assets/icons/maximize.svg"></button>
+                                            </div>
+                                        </div>
+                                        <!-- uploaded media -->
+                                        <img src="assets/imgs/test.jpg" class="card-img-top">
+                                        <!-- body -->
+                                        <div class="card-body">
+                                            <h2 class="card-text title-text p-1">Title</h2>
+                                            <p class="card-text body-text px-2">Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                elit.
+                                                Blanditiis veniam
+                                                at ipsum, voluptatem dignissimos laboriosam accusantium, deserunt expedita
+                                                voluptatum
+                                                voluptate architecto magni, rem quas quia. Temporibus sint suscipit ut aliquid!</p>
+            
+                                            <button class="btn btn-primary follow-btn ms-1 mt-0 mb-2"
+                                                style="background-color: #808080;">#quote</button>
+                                            <!-- bottom buttons -->
+                                            <div class="d-flex justify-content-between">
+                                                <div class="d-flex">
+                                                    <span class="bottom-buttons icon-button" data-bs-toggle="modal"
+                                                        data-bs-target="#cardModal">
+                                                        <img src="assets/icons/comment.svg" class="me-1">Comments
+                                                    </span>
+                                                    <span class="bottom-buttons icon-button" onclick="toggleActive(this)">
+                                                        <img src="assets/icons/bookmark2.svg" class="me-1">Bookmark
+                                                    </span>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <div class="star" onclick="setRating(1)">
+                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                    </div>
+                                                    <div class="star" onclick="setRating(2)">
+                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                    </div>
+                                                    <div class="star" onclick="setRating(3)">
+                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                    </div>
+                                                    <div class="star" onclick="setRating(4)">
+                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                    </div>
+                                                    <div class="star" onclick="setRating(5)">
+                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                    <!-- modal large view with edit/delete button -->
+                                    <div class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="cardModalLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content" style="background-color: transparent; border: none;">
+                                                <div class="modal-body">
+                                                    <div class="card custom-card">
+                                                        <!-- user -->
+                                                        <div class="card-header d-flex align-items-center p-3"
+                                                            style="border-color:white">
+                                                            <img src="assets/imgs/pfp.jpg" class="profile-pic me-1">
+                                                            <div>
+                                                                <h6 class="mb-0 profile-text">jdoe</h6>
+                                                            </div>
+                                                            <div>
+                                                                <button class="btn btn-primary ms-1 follow-btn">Follow</button>
+                                                            </div>
+            
+                                                            <div class="ms-auto d-flex align-items-center" data-bs-dismiss="modal">
+                                                                <button class="btn maximize-btn"><img
+                                                                        src="assets/icons/minimize.svg"></button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- uploaded media -->
+                                                        <img src="assets/imgs/test.jpg" class="card-img-top">
+                                                        <!-- body -->
+                                                        <div class="card-body">
+                                                            <h2 class="card-text title-text p-1">Title</h2>
+                                                            <div class="modal-body">
+                                                                <p class="card-text body-text px-2">Lorem ipsum dolor sit amet
+                                                                    consectetur adipisicing elit. Commodi laboriosam eveniet at
+                                                                    omnis in
+                                                                    harum sit nesciunt quod eos molestiae dolores provident hic
+                                                                    eaque,
+                                                                    magni architecto dolorem tempore consectetur vitae.</p>
+                                                            </div>
+            
+            
+                                                            <button class="btn btn-primary follow-btn ms-1 mt-0 mb-2"
+                                                                style="background-color: #808080;">#quote</button>
+                                                            <!-- bottom buttons -->
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="d-flex">
+                                                                    <span class="bottom-buttons icon-button"
+                                                                        onclick="toggleCommentInput(this)">
+                                                                        <img src="assets/icons/comment.svg" class="me-1">Comment
+                                                                    </span>
+                                                                    <span class="bottom-buttons icon-button"
+                                                                        onclick="toggleActive(this)">
+                                                                        <img src="assets/icons/bookmark2.svg" class="me-1">Bookmark
+                                                                    </span>
+                                                                </div>
+                                                                <div class="d-flex">
+                                                                    <button class="btn btn-primary follow-btn me-2 button-text"
+                                                                        style="background-color: #B23B3B;"><img
+                                                                            src="assets/icons/delete2.svg">Delete</button>
+                                                                    <button class="btn btn-primary follow-btn me-2 button-text"
+                                                                        style="background-color: #7091E6;"><img
+                                                                            src="assets/icons/edit2.svg">Edit</button>
+            
+                                                                    <div class="star" onclick="setRating(1)">
+                                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                                    </div>
+                                                                    <div class="star" onclick="setRating(2)">
+                                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                                    </div>
+                                                                    <div class="star" onclick="setRating(3)">
+                                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                                    </div>
+                                                                    <div class="star" onclick="setRating(4)">
+                                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                                    </div>
+                                                                    <div class="star" onclick="setRating(5)">
+                                                                        <img src="assets/icons/star.svg" class="me-1 star-icon">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                        <!-- collapsible comment -->
+                                                        <div class="comment-input-container" style="background-color:#C9F6FF">
+                                                            <form method="POST">
+                                                                <div class="mb-3">
+                                                                    <textarea class="form-control body-text" name="comment" rows="5"
+                                                                        placeholder="Write a comment..."></textarea>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary my-1 ms-1">Comment</button>
+                                                            </form>
+                                                            <div>
+                                                                <h5 class="body-text mt-5 ms-2" style="color: #808080;">Comments
+                                                                </h5>
+                                                            </div>
+            
+                                                            <!-- Comments Section -->
+                                                            <div class="comment-list text-break">
+                                                                <div class="card comment-card mb-2 body-text">
+                                                                    <div class="comment-card-header d-flex align-items-center ms-3 mt-3"
+                                                                        style="border-color:white">
+                                                                        <img src="assets/imgs/pfp.jpg" class="profile-pic me-1">
+                                                                        <div>
+                                                                            <h6 class="mb-0 profile-text">jdoe</h6>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="ms-5 me-3 p-2">Lorem ipsum dolor sit amet consectetur
+                                                                        adipisicing elit.
+                                                                        Laboriosam atque voluptates odit asperiores delectus. Nisi
+                                                                        fugit, quam pariatur magni quod nostrum, minus eaque,
+                                                                        reiciendis magnam quo aut ipsum tempora architecto?</p>
+                                                                </div>
+                                                            </div>
+            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button class="btn btn-primary follow-btn">Follow</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
                 <!-- Create button for responsiveness -->
                 <div class="me-3">
                     <div class="create-post-button">
@@ -214,42 +392,99 @@
                 </div>
             </div>
 
-            <!-- Right Column -->
-            <div class="col-md-3 right-column d-none d-md-block">
-                <div class="search-bar">
-                    <input type="text" class="form-control" placeholder="Search...">
-                </div>
-                <div class="announcement-tab">
-                    <h5>Announcements</h5>
-                    <div class="announcement-box">
-                        <div class="card">
-                            <div class="card-body">
-                                <h6 class="card-title">Announcement 1</h6>
-                                <p class="card-text">This is the first announcement.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h6 class="card-title">Announcement 2</h6>
-                                <p class="card-text">This is the second announcement.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn-announcement">View All Announcements</button>
-                </div>
-                <footer class="footer">
-                    <div class="footer-content">
-                        <p><img src="assets/icons/Copyright.svg" class="footer-icon" alt="icon" width="20"
-                                height="20">2025 NowUKnow Corp. All Rights Reserved</p>
-                        <p>
-                            <a href="terms.php" class="footer-link">Terms of Services</a> |
-                            <a href="privacy.php" class="footer-link">Privacy Policy</a> |
-                            <a href="about.php" class="footer-link">About</a>
-                        </p>
-                    </div>
-                </footer>
+           <!-- Right Column -->
+           <div class="col-md-3 right-column d-none d-md-block">
+            <div class="search-bar">
+                <input type="text" class="form-control" placeholder="Search...">
             </div>
-        </div>
+            <div class="announcement-tab">
+                <h5>Announcements</h5>
+                <div class="announcement-box">
+                    <div class="card">
+                        <div class="card-body" data-bs-toggle="modal" data-bs-target="#announcement1Modal">
+                            <h6 class="card-title">Announcement 1</h6>
+                            <p class="card-text">This is the first announcement.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" data-bs-toggle="modal" data-bs-target="#announcement2Modal">
+                            <h6 class="card-title">Announcement 2</h6>
+                            <p class="card-text">This is the second announcement.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-announcement" data-bs-toggle="modal" data-bs-target="#viewAllModal">View All Announcements</button>
+            </div>
+
+            <!--Announcement Modal-->
+            <div class="modal fade" id="viewAllModal" tabindex="-1" aria-labelledby="viewAllModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content" style="background-color: #C9F6FF;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="viewAllModalLabel"> View All Announcements</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card mb-3">
+                                <div class="card-body" data-bs-toggle="modal" data-bs-target="#announcement1Modal">
+                                    <h6 class="card-title">Announcement 1</h6>
+                                    <p class="card-text">This is the first announcement.</p>
+                                </div>
+                            </div>
+                            <div class="card mb-3">
+                                <div class="card-body" data-bs-toggle="modal" data-bs-target="#announcement2Modal">
+                                    <h6 class="card-title">Announcement 2</h6>
+                                    <p class="card-text">This is the second announcement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for inside the announcement Section -->
+            <div class="modal fade" id="announcement1Modal" tabindex="-1" aria-labelledby="announcement1ModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color: #C9F6FF;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="announcement1ModalLabel">Announcement 1</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet vehicula tortor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="announcement2Modal" tabindex="-1" aria-labelledby="announcement2ModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color: #C9F6FF;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="announcement2ModalLabel">Announcement 2</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Footer Section -->
+
+             <footer class="footer">
+                <div class="footer-content">
+                    <p class="text-center"><img src="assets/icons/Copyright.svg" class="footer-icon" alt="icon"
+                            width="20" height="20">2025 NowUKnow Corp. All Rights Reserved</p>
+                    <p class="text-center">
+                        <a href="terms.php" class="footer-link">Terms of Services</a> |
+                        <a href="privacy.php" class="footer-link">Privacy Policy</a> |
+                        <a href="about.php" class="footer-link">About</a>
+                    </p>
+                </div>
+            </footer>
+        
+
         <!-- modal create post -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
