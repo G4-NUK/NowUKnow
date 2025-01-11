@@ -273,10 +273,7 @@ body {
     width: 100%;
     transition: all 0.3s ease;
     margin-bottom: 10px;
-}
-
-.announcement-box:hover {
-    overflow-y: auto;
+    overflow: hidden !important;
 }
 
 .announcement-tab {
@@ -340,6 +337,33 @@ body {
 .btn-announcement:hover {
     background-color: #A7D8E4;
 }
+
+.announcement-box .card:hover {
+    background-color: #7091E6;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.announcement-box .card {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.announcement-tab .announcement-modal {
+    transition: background-color 0.3s ease-in-out;
+}
+
+#viewAllModal .card:hover {
+    background-color: #7091E6;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#viewAllModal .card {
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+
 
 .footer {
     width: 100%;

@@ -47,7 +47,6 @@
         position: absolute;
         bottom: 50px;
         right: 50px;
-        z-index: 9999;
     }
 
     @media (max-width: 1000px) {
@@ -151,15 +150,6 @@
                 <!--Posts-->
                 <div class="posts-section">
                     <h3>User Posts</h3>
-
-                </div>
-                <!-- Create button for responsiveness -->
-                <div class="me-3">
-                    <div class="create-post-button">
-                        <button class="btn-create-post" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <img src="../assets/icons/edit.svg" alt="Icon" class="button-icon"> Create Post
-                        </button>
-                    </div>
                 </div>
             </div>
 
@@ -172,124 +162,197 @@
                     <h5>Announcements</h5>
                     <div class="announcement-box">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" data-bs-toggle="modal" data-bs-target="#announcement1Modal">
                                 <h6 class="card-title">Announcement 1</h6>
                                 <p class="card-text">This is the first announcement.</p>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" data-bs-toggle="modal" data-bs-target="#announcement2Modal">
                                 <h6 class="card-title">Announcement 2</h6>
                                 <p class="card-text">This is the second announcement.</p>
                             </div>
                         </div>
                     </div>
-                    <button class="btn-announcement">View All Announcements</button>
+                    <button class="btn-announcement" data-bs-toggle="modal" data-bs-target="#viewAllModal">View All
+                        Announcements</button>
                 </div>
 
+                <!--Announcement Modal-->
+                <div class="modal fade" id="viewAllModal" tabindex="-1" aria-labelledby="viewAllModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="background-color: #C9F6FF;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="viewAllModalLabel"> View All Announcements</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card mb-3">
+                                    <div class="card-body" data-bs-toggle="modal" data-bs-target="#announcement1Modal">
+                                        <h6 class="card-title">Announcement 1</h6>
+                                        <p class="card-text">This is the first announcement.</p>
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="card-body" data-bs-toggle="modal" data-bs-target="#announcement2Modal">
+                                        <h6 class="card-title">Announcement 2</h6>
+                                        <p class="card-text">This is the second announcement.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal for inside the announcement Section -->
+                <div class="modal fade" id="announcement1Modal" tabindex="-1" aria-labelledby="announcement1ModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content" style="background-color: #C9F6FF;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="announcement1ModalLabel">Announcement 1</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet vehicula
+                                    tortor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="modal fade" id="announcement2Modal" tabindex="-1" aria-labelledby="announcement2ModalLabel"
+                    aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color: #C9F6FF;">
+                        <div class="modal-header">
+                                <h5 class="modal-title" id="announcement2ModalLabel">Announcement 2</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                    vestibulum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
                 <!-- Footer Section -->
-                <footer class="footer">
+            <footer class="footer">
                     <div class="footer-content">
                         <p class="text-center"><img src="../assets/icons/Copyright.svg" class="footer-icon" alt="icon"
-                                width="20" height="20">2025
-                            NowUKnow Corp. All Rights Reserved</p>
+                                width="20" height="20">2025 NowUKnow Corp. All Rights Reserved</p>
                         <p class="text-center">
                             <a href="terms.php" class="footer-link">Terms of Services</a> |
                             <a href="privacy.php" class="footer-link">Privacy Policy</a> |
                             <a href="about.php" class="footer-link">About</a>
                         </p>
                     </div>
-                </footer>
-            </div>
-        </div>
-        <!-- Create post modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content" style="background-color: #C9F6FF;">
-                    <div class="modal-header">
-                        <div class="card-header d-flex align-items-center p-1" style="border-color:white">
-                            <img src="../assets/imgs/pfp.jpg" class="profile-pic me-1">
-                            <div>
-                                <h6 class="mb-0 profile-text">jdoe</h6>
-                            </div>
-                        </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="title-text form-floating mb-5 p-0">
-                            <input type="text" class="form-control text-wrap"
-                                style="background-color: #C9F6FF; border-color: #C9F6FF;" id="floatingInput"
-                                placeholder="Title">
-                            <label for="floatingInput">Title</label>
-                        </div>
-                        <div class="body-text form-floating mb-4 p-0" style="height: auto; max-height: 500px;">
-                            <input type="text" class="form-control"
-                                style="height: 100px; text-align: start; background-color: #67D2E8;" id="floatingInput"
-                                placeholder="Title">
-                            <label for="floatingInput">Write Something...</label>
-                        </div>
-                        <div class="card d-flex flex-row justify-content-center align-items-center mx-auto p-3"
-                            style="background-color: #C9F6FF; font-family: 'Helvetica Rounded';">
-                            <div class="col-5 text-start ps-3">
-                                <h6>Add Attachment(s)</h6>
-                            </div>
-                            <div class="col-7 ps-4 d-flex flex-row justify-content-center align-items-center">
-                                <div class="pictureUpload mx-3">
-                                    <label for="pictureInput">
-                                        <img src="../assets/icons/photo icon.svg" style="cursor: pointer">
-                                    </label>
-                                    <input type="file" id="pictureInput" name="pictureFile" class="form-control d-none"
-                                        accept=".png, .jpg">
-                                </div>
-                                <div class="videoUpload mx-3">
-                                    <label for="videoInput">
-                                        <img src="../assets/icons/video.svg" style="cursor: pointer">
-                                    </label>
-                                    <input type="file" id="videoInput" name="videoFile" class="form-control d-none"
-                                        accept=".mp4, .mov">
-                                </div>
-                                <div class="fileUpload mx-3">
-                                    <label for="fileInput">
-                                        <img src="../assets/icons/file.svg" style="cursor: pointer">
-                                    </label>
-                                    <input type="file" id="fileInput" name="fileUpload" class="form-control d-none"
-                                        accept=".pdf, .doc, .docx">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="addTags pt-3">
-                            <div class="dropdown" style="width: 100%;">
-                                <button class="btn btn-secondary dropdown-toggle" type="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false"
-                                    style="border-radius: 20px; font-family: 'Helvetica Rounded';">
-                                    add tags
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
+            </footer>
+
+                    <!-- Create button for responsiveness -->
+                    <div class="me-3">
+                        <div class="create-post-button">
+                            <button class="btn-create-post" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="../assets/icons/edit.svg" alt="Icon" class="button-icon"> Create Post
+                            </button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" style="background-color: #67D2E8;"
-                            onclick="window.location.href='index.html'">Post</button>
+
+                <!-- Create post modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content" style="background-color: #C9F6FF;">
+                            <div class="modal-header">
+                                <div class="card-header d-flex align-items-center p-1" style="border-color:white">
+                                    <img src="../assets/imgs/pfp.jpg" class="profile-pic me-1">
+                                    <div>
+                                        <h6 class="mb-0 profile-text">jdoe</h6>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="title-text form-floating mb-5 p-0">
+                                    <input type="text" class="form-control text-wrap"
+                                        style="background-color: #C9F6FF; border-color: #C9F6FF;" id="floatingInput"
+                                        placeholder="Title">
+                                    <label for="floatingInput">Title</label>
+                                </div>
+                                <div class="body-text form-floating mb-4 p-0" style="height: auto; max-height: 500px;">
+                                    <input type="text" class="form-control"
+                                        style="height: 100px; text-align: start; background-color: #67D2E8;"
+                                        id="floatingInput" placeholder="Title">
+                                    <label for="floatingInput">Write Something...</label>
+                                </div>
+                                <div class="card d-flex flex-row justify-content-center align-items-center mx-auto p-3"
+                                    style="background-color: #C9F6FF; font-family: 'Helvetica Rounded';">
+                                    <div class="col-5 text-start ps-3">
+                                        <h6>Add Attachment(s)</h6>
+                                    </div>
+                                    <div class="col-7 ps-4 d-flex flex-row justify-content-center align-items-center">
+                                        <div class="pictureUpload mx-3">
+                                            <label for="pictureInput">
+                                                <img src="../assets/icons/photo icon.svg" style="cursor: pointer">
+                                            </label>
+                                            <input type="file" id="pictureInput" name="pictureFile"
+                                                class="form-control d-none" accept=".png, .jpg">
+                                        </div>
+                                        <div class="videoUpload mx-3">
+                                            <label for="videoInput">
+                                                <img src="../assets/icons/video.svg" style="cursor: pointer">
+                                            </label>
+                                            <input type="file" id="videoInput" name="videoFile"
+                                                class="form-control d-none" accept=".mp4, .mov">
+                                        </div>
+                                        <div class="fileUpload mx-3">
+                                            <label for="fileInput">
+                                                <img src="../assets/icons/file.svg" style="cursor: pointer">
+                                            </label>
+                                            <input type="file" id="fileInput" name="fileUpload"
+                                                class="form-control d-none" accept=".pdf, .doc, .docx">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addTags pt-3">
+                                    <div class="dropdown" style="width: 100%;">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                            style="border-radius: 20px; font-family: 'Helvetica Rounded';">
+                                            add tags
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" style="background-color: #67D2E8;"
+                                    onclick="window.location.href='index.html'">Post</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- JS Post -->
-    <script src="../assets/js/post.js"></script>
-    <!-- JS Left column -->
-    <script src="../assets/js/leftcolumn.js"></script>
 
-    <!-- Bootstrap Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+            <!-- JS Post -->
+            <script src="../assets/js/post.js"></script>
+            <!-- JS Left column -->
+            <script src="../assets/js/leftcolumn.js"></script>
+
+            <!-- Bootstrap Script -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
 </body>
 
 </html>
