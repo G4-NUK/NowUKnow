@@ -20,30 +20,6 @@
         transition: all 0.3s ease;
     }
 
-    .profile-pic {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-    }
-
-    .title-text {
-        font-size: 30px;
-        font-family: "Helvetica";
-        letter-spacing: 3px;
-    }
-
-    .body-text {
-        font-size: 15px;
-        font-family: "Helvetica";
-        letter-spacing: 1px;
-        line-height: 21px;
-    }
-
-    .profile-text {
-        font-size: 20px;
-        font-family: "Helvetica Rounded";
-    }
-
     .btn-primary {
         border-radius: 50px;
         border-color: transparent;
@@ -56,159 +32,69 @@
         background-color: #7091E6;
     }
 
-    .bottom-buttons {
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    .profile-text {
+        font-size: 20px;
         font-family: "Helvetica Rounded";
-        font-size: 15px;
-        color: #808080;
-        cursor: pointer;
     }
 
-    .star-icon {
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-    }
-
-    .star img {
-        filter: grayscale(100%) brightness(80%);
-    }
-
-    .star img.active {
-        filter: brightness(100%) saturate(100%) invert(22%) sepia(36%) saturate(408%) hue-rotate(195deg) brightness(98%) contrast(102%);
-    }
-
-    .star.inactive img {
-        filter: grayscale(100%) brightness(80%);
-    }
-
-    .star {
-        display: inline-block;
-        margin-right: 5px;
-    }
-
-    .icon-button.active {
-        filter: brightness(100%) saturate(100%) invert(22%) sepia(36%) saturate(408%) hue-rotate(195deg) brightness(98%) contrast(102%);
-    }
-
-    .icon-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        padding: 5px;
-    }
-
-    .bottom-buttons:hover {
-        color: #5a5a5a;
-    }
-
-    .comment-input-container {
-        display: none;
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #f1f1f1;
-        border-radius: 10px;
-    }
-
-    .comment-card {
-        border-radius: 10px;
-        background-color: #e1faff;
-        border-color: #e1faff;
-    }
-
-    .comment p {
-        margin: 0;
-        font-size: 13px;
-        color: #333;
-
-    }
-
-    .comment-card-header {
-        background-color: #e1faff;
+    .create-post-button {
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+        z-index: 9999;
     }
 
     @media (max-width: 1000px) {
-        .custom-card {
-            max-width: 100%;
+        .left-column {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            z-index: 1;
         }
 
-
-        .button-text {
-            font-size: 0;
-        }
-    }
-
-    @media (max-width: 995px) {
-        .custom-card {
-            max-width: 100%;
+        .middle-column {
+            width: 100%;
         }
 
-        .bottom-buttons {
-            font-size: 0;
-        }
-
-        .button-text {
-            font-size: 0;
+        .left-column.show {
+            left: 0;
         }
     }
 
-    @media (max-width: 720px) {
-        .custom-card {
-            max-width: 100%;
-        }
-
-        .bottom-buttons {
-            font-size: 0;
-        }
-
-        .title-text {
-            font-size: 20px;
-        }
-
-        .body-text {
-            font-size: 13px;
-        }
-
-        .button-text {
-            font-size: 0;
-        }
-
+    .hamburger-btn {
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 999;
     }
 
-
-
-    @media (max-width: 576px) {
-        .custom-card {
-            max-width: 100%;
+    @media (min-width: 1000px) {
+        .hamburger-btn {
+            display: none;
         }
-
-        .title-text {
-            font-size: 24px;
-        }
-
-        .body-text {
-            font-size: 12px;
-        }
-
-        .bottom-buttons {
-            font-size: 0;
-        }
-
-        .btn-primary {
-            height: 25px;
-            font-size: 12px;
-        }
-
-        .button-text {
-            font-size: 0;
-        }
-
     }
 </style>
 
 <body>
     <div class="container-fluid">
         <div class="row">
+
+            <!-- Hamburger Button -->
+            <div class="hamburger-btn" onclick="toggleLeftColumn()">&#9776;</div>
 
             <!-- Left Column -->
             <div class="col-md-3 left-column">
@@ -217,18 +103,20 @@
                 </div>
                 <div class="sidebar">
                     <ul>
-                        <li><a href="home.html"><img src="../assets/icons/home.svg" alt="Home" class="nav-icon"><span
+                        <li><a href="../index.html"><img src="../assets/icons/home.svg" alt="Home" class="nav-icon"><span
                                     class="nav-title">Home</span></p></a></li>
-                        <li><a href="profile.html"><img src="../assets/icons/profile.svg" alt="Profile"
+                        <li><a href="users/profile.html"><img src="../assets/icons/profile.svg" alt="Profile"
                                     class="nav-icon"><span class="nav-title"><span class="nav-title">Profile</span></a>
                         </li>
-                        <li><a href="tags.html"><img src="../assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span
+                        <li><a href="../tags/explore.html"><img src="../assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span
                                     class="nav-title"><span class="nav-title">Tags</span></a></li>
-                        <li><a href="notification.html"><img src="../assets/icons/notification.svg" alt="Notification"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Notification</span></a>
+                        <li><a href="../notif.html"><img src="../assets/icons/notification.svg" alt="Notification"
+                                    class="nav-icon"><span class="nav-title"><span
+                                        class="nav-title">Notification</span></a>
                         </li>
                         <li><a href="bookmarks.html"><img src="../assets/icons/bookmark.svg" alt="Bookmarks"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Bookmarks</span></a>
+                                    class="nav-icon"><span class="nav-title"><span
+                                        class="nav-title">Bookmarks</span></a>
                         </li>
                     </ul>
                 </div>
@@ -258,16 +146,24 @@
                         </div>
                     </div>
                 </div>
-                    
-                    <!--Posts-->
+
+                <!--Posts-->
                 <div class="posts-section">
-                <h3>User Posts</h3>
-                     
+                    <h3>User Posts</h3>
+
+                </div>
+                <!-- Create button for responsiveness -->
+                <div class="me-3">
+                    <div class="create-post-button">
+                        <button class="btn-create-post" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <img src="../assets/icons/edit.svg" alt="Icon" class="button-icon"> Create Post
+                        </button>
+                    </div>
                 </div>
             </div>
 
-                 <!-- Right Column -->
-            <div class="col-md-3 right-column">
+            <!-- Right Column -->
+            <div class="col-md-3 right-column d-none d-md-block">
                 <div class="search-bar">
                     <input type="text" class="form-control" placeholder="Search...">
                 </div>
@@ -289,7 +185,7 @@
                     </div>
                     <button class="btn-announcement">View All Announcements</button>
                 </div>
-    
+
                 <!-- Footer Section -->
                 <footer class="footer">
                     <div class="footer-content">
@@ -303,23 +199,84 @@
                         </p>
                     </div>
                 </footer>
-    
-                <div class="create-post-button">
-                    <button class="btn-create-post">
-                        <img src="../assets/icons/edit.svg" alt="Icon" class="button-icon"> Create Post
-                    </button>
+            </div>
+        </div>
+        <!-- Create post modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #C9F6FF;">
+                    <div class="modal-header">
+                        <div class="card-header d-flex align-items-center p-1" style="border-color:white">
+                            <img src="../assets/imgs/pfp.jpg" class="profile-pic me-1">
+                            <div>
+                                <h6 class="mb-0 profile-text">jdoe</h6>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="title-text form-floating mb-5 p-0">
+                            <input type="text" class="form-control text-wrap"
+                                style="background-color: #C9F6FF; border-color: #C9F6FF;" id="floatingInput"
+                                placeholder="Title">
+                            <label for="floatingInput">Title</label>
+                        </div>
+                        <div class="body-text form-floating mb-4 p-0" style="height: auto; max-height: 500px;">
+                            <input type="text" class="form-control"
+                                style="height: 100px; text-align: start; background-color: #67D2E8;" id="floatingInput"
+                                placeholder="Title">
+                            <label for="floatingInput">Write Something...</label>
+                        </div>
+                        <div class="card d-flex flex-row justify-content-center align-items-center mx-auto p-3"
+                            style="background-color: #C9F6FF; font-family: 'Helvetica Rounded';">
+                            <div class="col-5 text-start ps-3">
+                                <h6>Add Attachment(s)</h6>
+                            </div>
+                            <div class="col-7 ps-4 d-flex flex-row justify-content-center align-items-center">
+                                <div class="pictureUpload mx-3">
+                                    <img src="../assets/icons/photo icon.svg">
+                                </div>
+                                <div class="videoUpload mx-3">
+                                    <img src="../assets/icons/video.svg">
+                                </div>
+                                <div class="fileUpload mx-3">
+                                    <img src="../assets/icons/file.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addTags pt-3">
+                            <div class="dropdown" style="width: 100%;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                    style="border-radius: 20px; font-family: 'Helvetica Rounded';">
+                                    add tags
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" style="background-color: #67D2E8;"
+                            onclick="window.location.href='index.html'">Post</button>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
-            <!-- JS Post -->
-            <script src="assets/js/post.js"></script>
-            
-            <!-- Bootstrap Script -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                crossorigin="anonymous"></script>
+
+    <!-- JS Post -->
+    <script src="../assets/js/post.js"></script>
+    <!-- JS Left column -->
+    <script src="../assets/js/leftcolumn.js"></script>
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
