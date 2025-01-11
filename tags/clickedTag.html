@@ -4,167 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>NowUKnow</title>
 </head>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Helvetica, sans-serif;
-        display: flex;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    @font-face {
-        font-family: Helvetica-Rounded;
-        src: url(../fonts/Helvetica-Rounded-Bold.otf);
-
-    }
-
-    .container-fluid,
-    .row {
-        height: 100vh;
-    }
-
-    .row {
-        display: flex;
-    }
-
-    .left-column {
-        flex: 0.5;
-        background-color: #ffffff;
-        overflow-y: hidden;
-    }
-
-    .left-column {
-        border-right: 1px solid #35D6ED;
-    }
-
-    .middle-column {
-        height: 100vh;
-        flex: 2;
-        background-color: #ffffff;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-top: 0;
-        border-left: 1px solid #ddd;
-        border-right: 1px solid #ddd;
-    }
-
-    .middle-column::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .middle-column::-webkit-scrollbar-thumb {
-        background: #c0c0c0;
-        border-radius: 3px;
-    }
-
-    .sidebar ul {
-        list-style-type: none;
-        font-family: 'Helvetica Rounded', Helvetica, sans-serif;
-    }
-
-    .sidebar ul li {
-        font-size: 21px;
-        margin-bottom: 30px;
-    }
-
-    .sidebar ul li a {
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        align-items: center;
-    }
-
-    .logo img {
-        width: 150px;
-        height: 150px;
-        margin-top: -50px;
-        margin-left: 50px;
-    }
-
-    .nav-icon {
-        width: 32px;
-        height: 32px;
-        margin-right: 10px;
-    }
-
-    .navIconHome {
-        font-size: 20px;
-    }
-
-
-    .btn-logout {
-        color: white;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Helvetica Rounded", Helvetica, sans-serif;
-        font-size: 15px;
-
-    }
-
-    .btn-logout {
-        background-color: #B23B3B;
-        width: 130px;
-        height: 40px;
-        margin-top: 50px;
-    }
-
-
-
-    .content {
-        height: 200vh;
-        padding-top: 20px;
-    }
-
-    @media (max-width: 768px) {
-
-        .nav-title {
-            display: none !important;
-        }
-    }
-
-    .middle-column .navbar {
-        margin-top: 0;
-        text-align: center;
-    }
-
-    .middle-column .navbar-nav {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-
-    }
-
-    .middle-column .nav-link {
-        font-family: 'Helvetica Rounded', sans-serif;
-        font-size: 1.5rem;
-        color: #333;
-    }
-
-    .navbar {
-        border-bottom: 1px solid #35D6ED;
-    }
-
-    @media (max-width: 768px) {
-        .middle-column .navbar-nav {
-            flex-direction: row;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .middle-column .nav-link {
-            font-size: 0.9rem;
-        }
-    }
-
     .custom-card {
         width: 100%;
         max-width: auto;
@@ -173,30 +18,6 @@
         border-color: white;
         border-radius: 10px;
         transition: all 0.3s ease;
-    }
-
-    .profile-pic {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-    }
-
-    .title-text {
-        font-size: 30px;
-        font-family: "Helvetica";
-        letter-spacing: 3px;
-    }
-
-    .body-text {
-        font-size: 15px;
-        font-family: "Helvetica";
-        letter-spacing: 1px;
-        line-height: 21px;
-    }
-
-    .profile-text {
-        font-size: 20px;
-        font-family: "Helvetica Rounded";
     }
 
     .btn-primary {
@@ -211,159 +32,78 @@
         background-color: #7091E6;
     }
 
-    .bottom-buttons {
-        font-family: "Helvetica Rounded";
-        font-size: 15px;
-        color: #808080;
-        cursor: pointer;
+    .middle-column {
+        height: 100vh;
+        flex: 2;
+        background-color: #ffffff;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-top: 0;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
     }
 
-    .star-icon {
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-    }
-
-    .star img {
-        filter: grayscale(100%) brightness(80%);
-    }
-
-    .star img.active {
-        filter: brightness(100%) saturate(100%) invert(22%) sepia(36%) saturate(408%) hue-rotate(195deg) brightness(98%) contrast(102%);
-    }
-
-    .star.inactive img {
-        filter: grayscale(100%) brightness(80%);
-    }
-
-    .star {
-        display: inline-block;
-        margin-right: 5px;
-    }
-
-    .icon-button.active {
-        filter: brightness(100%) saturate(100%) invert(22%) sepia(36%) saturate(408%) hue-rotate(195deg) brightness(98%) contrast(102%);
-    }
-
-    .icon-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        padding: 5px;
-    }
-
-    .bottom-buttons:hover {
-        color: #5a5a5a;
-    }
-
-    .comment-input-container {
-        display: none;
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #f1f1f1;
-        border-radius: 10px;
-    }
-
-    .comment-card {
-        border-radius: 10px;
-        background-color: #e1faff;
-        border-color: #e1faff;
-    }
-
-    .comment p {
-        margin: 0;
-        font-size: 13px;
+    .middle-column .nav-link {
+        font-family: 'Helvetica Rounded', sans-serif;
+        font-size: 1.5rem;
         color: #333;
-
     }
 
-    .comment-card-header {
-        background-color: #e1faff;
+    .navbar {
+        border-bottom: 1px solid #35D6ED;
+    }
+
+    @media (max-width: 768px) {
+        .card-text {
+            font-size: 0.9rem;
+        }
     }
 
     @media (max-width: 1000px) {
-        .custom-card {
-            max-width: 100%;
+        .left-column {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            z-index: 1;
         }
 
-
-        .button-text {
-            font-size: 0;
-        }
-    }
-
-    @media (max-width: 995px) {
-        .custom-card {
-            max-width: 100%;
+        .middle-column {
+            width: 100%;
         }
 
-        .bottom-buttons {
-            font-size: 0;
-        }
-
-        .button-text {
-            font-size: 0;
+        .left-column.show {
+            left: 0;
         }
     }
 
-    @media (max-width: 720px) {
-        .custom-card {
-            max-width: 100%;
-        }
-
-        .bottom-buttons {
-            font-size: 0;
-        }
-
-        .title-text {
-            font-size: 20px;
-        }
-
-        .body-text {
-            font-size: 13px;
-        }
-
-        .button-text {
-            font-size: 0;
-        }
-
+    .hamburger-btn {
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 999;
     }
 
-
-
-    @media (max-width: 576px) {
-        .custom-card {
-            max-width: 100%;
+    @media (min-width: 1000px) {
+        .hamburger-btn {
+            display: none;
         }
-
-        .title-text {
-            font-size: 24px;
-        }
-
-        .body-text {
-            font-size: 12px;
-        }
-
-        .bottom-buttons {
-            font-size: 0;
-        }
-
-        .btn-primary {
-            height: 25px;
-            font-size: 12px;
-        }
-
-        .button-text {
-            font-size: 0;
-        }
-
     }
 </style>
 
 <body>
     <div class="container-fluid">
         <div class="row">
+
+            <!-- Hamburger Button -->
+            <div class="hamburger-btn" onclick="toggleLeftColumn()">&#9776;</div>
 
             <!-- Left Column -->
             <div class="col-md-3 left-column">
@@ -372,18 +112,21 @@
                 </div>
                 <div class="sidebar">
                     <ul>
-                        <li><a href="home.html"><img src="../assets/icons/home.svg" alt="Home" class="nav-icon"><span
+                        <li><a href="../home.html"><img src="../assets/icons/home.svg" alt="Home" class="nav-icon"><span
                                     class="nav-title">Home</span></p></a></li>
-                        <li><a href="profile.html"><img src="../assets/icons/profile.svg" alt="Profile"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
+                        <li><a href="../profile.html"><img src="../assets/icons/profile.svg" alt="Profile"
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Profile</span></a>
                         </li>
-                        <li><a href="tags.html"><img src="../assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span
-                                    class="nav-title"><span class="nav-title">Home</span></a></li>
-                        <li><a href="notification.html"><img src="../assets/icons/notification.svg" alt="Notification"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
+                        <li><a href="../tags/explore.html"><img src="../assets/icons/hashtag.svg" alt="Tags"
+                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Tags</span></a>
+                        </li>
+                        <li><a href="../notif.html"><img src="../assets/icons/notification.svg" alt="Notification"
+                                    class="nav-icon"><span class="nav-title"><span
+                                        class="nav-title">Notifcation</span></a>
                         </li>
                         <li><a href="bookmarks.html"><img src="../assets/icons/bookmark.svg" alt="Bookmarks"
-                                    class="nav-icon"><span class="nav-title"><span class="nav-title">Home</span></a>
+                                    class="nav-icon"><span class="nav-title"><span
+                                        class="nav-title">Bookmarks</span></a>
                         </li>
                     </ul>
                 </div>
@@ -396,8 +139,9 @@
             <div class="col-md-6 middle-column px-0">
 
                 <nav class="navbar navbar-expand-md navbar-light bg-light">
-                    <div class="container">
-                        <a class="nav-link active fw-bold" href="#">Explore Tags</a>
+                    <div class="container" style="height:65px">
+                        <h5 class="m-0 title-text ms-3" style="font-family:Helvetica-Rounded; letter-spacing:normal">
+                            Explore Tags</h5>
                     </div>
                 </nav>
 
@@ -590,8 +334,11 @@
     </div>
 
 
+
     <!-- JS Post -->
     <script src="../assets/js/post.js"></script>
+    <!-- JS Left column -->
+    <script src="../assets/js/leftcolumn.js"></script>
     <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

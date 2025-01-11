@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="teststyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>NowUKnow</title>
+</head>
+
+<style>
+    .notif-card {
+        border-bottom: 1px solid #35D6ED;
+    }
+
+    .custom-card {
+        width: 100%;
+        max-width: auto;
+        margin: auto;
+        background-color: #C9F6FF;
+        border-color: white;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        border-radius: 50px;
+        border-color: transparent;
+        height: 30px;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Helvetica Rounded";
+        background-color: #7091E6;
+        border-color: transparent;
+    }
+
+    @media (max-width: 1000px) {
+        .left-column {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+        }
+
+        .middle-column {
+            width: 100%;
+        }
+
+        .left-column.show {
+            left: 0;
+        }
+    }
+
+    .hamburger-btn {
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 999;
+    }
+
+    @media (min-width: 1000px) {
+        .hamburger-btn {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Hamburger Button -->
+            <div class="hamburger-btn" onclick="toggleLeftColumn()">&#9776;</div>
+
+            <!-- Left Column -->
+            <div class="col-md-3 left-column">
+                <div class="logo m-0">
+                    <img src="assets/icons/wordMark big.svg" alt="NowUKnow Logo" width="100" height="100">
+                </div>
+                <div class="sidebar">
+                    <ul>
+                        <li><a href="index.html"><img src="assets/icons/home.svg" alt="Home" class="nav-icon"><span
+                                    class="nav-title">Home</span></a></li>
+                        <li><a href="users/profile.html"><img src="assets/icons/profile.svg" alt="Profile"
+                                    class="nav-icon"><span class="nav-title">Profile</span></a></li>
+                        <li><a href="tags/explore.html"><img src="assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span
+                                    class="nav-title">Tags</span></a></li>
+                        <li><a href="notif.html"><img src="assets/icons/notification.svg" alt="Notification"
+                                    class="nav-icon"><span class="nav-title">Notification</span></a></li>
+                        <li><a href="bookmarks.html"><img src="assets/icons/bookmark.svg" alt="Bookmarks"
+                                    class="nav-icon"><span class="nav-title">Bookmarks</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="logout-button">
+                    <button class="btn-logout">Log Out</button>
+                </div>
+            </div>
+
+            <!-- Middle Column -->
+            <div class="col-12 col-md-6 middle-column p-0">
+                <div class="content p-0">
+                    <!-- notification title -->
+                    <div class="container-fluid p-0">
+                        <div class="container-fluid notif-card d-flex justify-content-center align-items-center"
+                            style="height: 65px;">
+                            <h5 class="m-0 title-text" style="font-family:Helvetica-Rounded; letter-spacing:normal">
+                                Notification</h5>
+                        </div>
+                        <!-- notification container (loop) -->
+                        <div class="container-fluid notif-card d-flex align-items-center p-4" style="height: 100px;">
+                            <img src="assets/imgs/pfp.jpg" class="profile-pic me-1">
+                            <div>
+                                <h6 class="mb-0 profile-text">jdoe liked your post</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-3 right-column d-none d-md-block">
+                <div class="search-bar">
+
+                    <input type="text" class="form-control" placeholder="Search...">
+                </div>
+                <div class="announcement-tab">
+                    <h5>Announcements</h5>
+                    <div class="announcement-box">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title">Announcement 1</h6>
+                                <p class="card-text">This is the first announcement.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title">Announcement 2</h6>
+                                <p class="card-text">This is the second announcement.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-announcement">View All Announcements</button>
+                </div>
+
+
+
+                <!-- Footer Section -->
+                <footer class="footer">
+                    <div class="footer-content">
+                        <p class="text-center"><img src="assets/icons/Copyright.svg" class="footer-icon" alt="icon"
+                                width="20" height="20">2025 NowUKnow Corp. All Rights Reserved</p>
+                        <p class="text-center">
+                            <a href="terms.php" class="footer-link">Terms of Services</a> |
+                            <a href="privacy.php" class="footer-link">Privacy Policy</a> |
+                            <a href="about.php" class="footer-link">About</a>
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JS Left column -->
+    <script src="assets/js/leftcolumn.js"></script>
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
