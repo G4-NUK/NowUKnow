@@ -21,64 +21,6 @@ body {
     display: flex;
 }
 
-.profile-container {
-    max-width: 800px;
-    margin: auto;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    align-items: center;
-}
-
-.profile-section {
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-.background img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.profile-info {
-    text-align: center;
-}
-
-
-
-.profile-pic img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    margin-top: -60px;
-    margin-left: 250px;
-    background: #fff;
-
-}
-
-.fullname {
-    font-size: 24px;
-    margin-top: 20px;
-    margin-bottom: -5px;
-    font-family: Helvetica-Rounded;
-}
-
-.username {
-    color: #777;
-    font-size: 18px;
-    margin-top: 5px;
-    font-family: Helvetica;
-}
-
-.followers {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
-    font-family: Helvetica;
-}
 
 .edit-profile-btn {
     padding: 10px 20px;
@@ -95,16 +37,7 @@ body {
     background: #0056b3;
 }
 
-.posts-section {
-    padding: 20px;
-    font-family: Helvetica Rounded;
-}
 
-.posts-section h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    margin-left: 250px;
-}
 
 .post {
     background: #f9f9f9;
@@ -361,9 +294,6 @@ body {
 #viewAllModal .card {
     transition: background-color 0.3s ease-in-out;
 }
-
-
-
 
 .footer {
     width: 100%;
