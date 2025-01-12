@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="teststyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>NowUKnow</title>
 </head>
@@ -13,6 +12,12 @@
 <style>
     .notif-card {
         border-bottom: 1px solid #35D6ED;
+    }
+
+    .create-post-button {
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
     }
 
     .custom-card {
@@ -62,6 +67,7 @@
     .hamburger-btn {
         display: block;
         font-size: 25px;
+        width: 25px;
         cursor: pointer;
         position: absolute;
         top: 15px;
@@ -94,8 +100,8 @@
                                     class="nav-title">Home</span></a></li>
                         <li><a href="users/profile.html"><img src="assets/icons/profile.svg" alt="Profile"
                                     class="nav-icon"><span class="nav-title">Profile</span></a></li>
-                        <li><a href="tags/explore.html"><img src="assets/icons/hashtag.svg" alt="Tags" class="nav-icon"><span
-                                    class="nav-title">Tags</span></a></li>
+                        <li><a href="tags/explore.html"><img src="assets/icons/hashtag.svg" alt="Tags"
+                                    class="nav-icon"><span class="nav-title">Tags</span></a></li>
                         <li><a href="notif.html"><img src="assets/icons/notification.svg" alt="Notification"
                                     class="nav-icon"><span class="nav-title">Notification</span></a></li>
                         <li><a href="bookmarks.html"><img src="assets/icons/bookmark.svg" alt="Bookmarks"
@@ -125,6 +131,14 @@
                                 <h6 class="mb-0 profile-text">jdoe liked your post</h6>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <!-- Create button for responsiveness -->
+                <div class="me-3">
+                    <div class="create-post-button">
+                        <button class="btn-create-post" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <img src="assets/icons/edit.svg" alt="Icon" class="button-icon"> Create Post
+                        </button>
                     </div>
                 </div>
             </div>
@@ -168,6 +182,72 @@
                         </p>
                     </div>
                 </footer>
+            </div>
+        </div>
+
+        <!-- modal create post -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #C9F6FF;">
+                    <div class="modal-header">
+                        <div class="card-header d-flex align-items-center p-1" style="border-color:white">
+                            <img src="assets/imgs/pfp.jpg" class="profile-pic me-1">
+                            <div>
+                                <h6 class="mb-0 profile-text">jdoe</h6>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="title-text form-floating mb-5 p-0">
+                            <input type="text" class="form-control text-wrap"
+                                style="background-color: #C9F6FF; border-color: #C9F6FF;" id="floatingInput"
+                                placeholder="Title">
+                            <label for="floatingInput">Title</label>
+                        </div>
+                        <div class="body-text form-floating mb-4 p-0" style="height: auto; max-height: 500px;">
+                            <input type="text" class="form-control"
+                                style="height: 100px; text-align: start; background-color: #67D2E8;" id="floatingInput"
+                                placeholder="Title">
+                            <label for="floatingInput">Write Something...</label>
+                        </div>
+                        <div class="card d-flex flex-row justify-content-center align-items-center mx-auto p-3"
+                            style="background-color: #C9F6FF; font-family: 'Helvetica Rounded';">
+                            <div class="col-5 text-start ps-3">
+                                <h6>Add Attachment(s)</h6>
+                            </div>
+                            <div class="col-7 ps-4 d-flex flex-row justify-content-center align-items-center">
+                                <div class="pictureUpload mx-3">
+                                    <img src="assets/icons/photo icon.svg">
+                                </div>
+                                <div class="videoUpload mx-3">
+                                    <img src="assets/icons/video.svg">
+                                </div>
+                                <div class="fileUpload mx-3">
+                                    <img src="assets/icons/file.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addTags pt-3">
+                            <div class="dropdown" style="width: 100%;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                    style="border-radius: 20px; font-family: 'Helvetica Rounded';">
+                                    add tags
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" style="background-color: #67D2E8;"
+                            onclick="window.location.href='index.html'">Post</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
