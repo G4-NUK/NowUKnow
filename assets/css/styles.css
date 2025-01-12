@@ -610,12 +610,6 @@ body {
 
 @media (max-width: 480px) {
 
-    .btn-create-post {
-        width: 100%;
-        font-size: 12px;
-        height: 40px;
-    }
-
     .announcement-box {
         padding: 10px;
     }
