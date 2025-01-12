@@ -344,6 +344,60 @@ body {
     margin-left: 0px;
 }
 
+.header-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Helvetica Rounded', Helvetica, sans-serif;
+
+}
+
+.users-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #555;
+    font-family: 'Helvetica Rounded', Helvetica, sans-serif;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    background: #C9F6FF;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.user-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+.user-info h6 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Helvetica Rounded', Helvetica, sans-serif;
+
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    font-family: 'Helvetica Rounded', Helvetica, sans-serif;
+
+}
+
 
 .search-bar input {
     width: 100%;
