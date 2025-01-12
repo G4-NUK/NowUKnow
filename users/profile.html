@@ -10,12 +10,14 @@
 </head>
 
 <style>
+
+    
     .background img {
-        position: relative;
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
+            position: relative;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
     .profile-container {
         max-width: 800px;
@@ -28,25 +30,24 @@
 
     .profile-section {
         position: relative;
-
+        
     }
 
     .profile-info {
         text-align: center;
-        margin-top: 80px;/
+        margin-top:80px; /
     }
 
     .profile-section {
-        position: relative;
+        position: relative; 
         border-bottom: 1px solid #ddd;
     }
 
     .profile-pic1 {
         position: absolute;
-        top: 75%;
-        ;
+        top: 75%; ;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); 
     }
 
     .profile-pic1 img {
@@ -54,9 +55,9 @@
         height: 150px;
         object-fit: cover;
         border-radius: 50%;
-        border: 4px solid white;
+        border: 4px solid white; 
     }
-
+    
     .profile-pic {
         width: 35px;
         height: 35px;
@@ -134,9 +135,9 @@
 
 
     @media (max-width: 768px) {
-        .profile-dropdown {
-            top: 10px;
-            right: 20px;
+    .profile-dropdown {
+        top: 10px;
+        right: 20px;
         }
     }
 
@@ -178,11 +179,7 @@
         z-index: 999;
     }
 
-    @media (min-width: 1000px) {
-        .hamburger-btn {
-            display: none;
-        }
-    }
+ 
 </style>
 
 <body>
@@ -201,7 +198,7 @@
                     <ul>
                         <li><a href="../index.html"><img src="../assets/icons/home.svg" alt="Home"
                                     class="nav-icon"><span class="nav-title">Home</span></p></a></li>
-                        <li><a href="users/profile.html"><img src="../assets/icons/profile.svg" alt="Profile"
+                        <li><a href="../profile.html"><img src="../assets/icons/profile.svg" alt="Profile"
                                     class="nav-icon"><span class="nav-title"><span class="nav-title">Profile</span></a>
                         </li>
                         <li><a href="../tags/explore.html"><img src="../assets/icons/hashtag.svg" alt="Tags"
@@ -211,7 +208,7 @@
                                     class="nav-icon"><span class="nav-title"><span
                                         class="nav-title">Notification</span></a>
                         </li>
-                        <li><a href="bookmarks.html"><img src="../assets/icons/bookmark.svg" alt="Bookmarks"
+                        <li><a href="../.html"><img src="../assets/icons/bookmark.svg" alt="Bookmarks"
                                     class="nav-icon"><span class="nav-title"><span
                                         class="nav-title">Bookmarks</span></a>
                         </li>
@@ -232,16 +229,13 @@
                             <img src="../assets/imgs/pfp.jpg" alt="Background Picture">
                         </div>
                         <div class="profile-pic1" style="margin-top: -85px;">
-                            <img src="../assets/imgs/pfp.jpg" alt="Profile Picture"
-                                style="width: 150px; border-radius: 50%;">
+                            <img src="../assets/imgs/pfp.jpg" alt="Profile Picture" style="width: 150px; border-radius: 50%;">
                         </div>
 
                         <!--Profile Dropdown-->
                         <div class="profDropdown pt-3">
-                            <div class="profile-dropdown position-absolute"
-                                style="width: 100%; top:200px; left: 600px;">
-                                <button class="btn btn-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                            <div class="profile-dropdown position-absolute" style="width: 100%; top:200px; left: 600px;">
+                                <button class="btn btn-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="ellipsis">...</span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -259,150 +253,185 @@
                         </div>
                     </div>
                 </div>
-
-
+                
+                
 
                 <!--Posts-->
                 <div class="posts-section">
                     <h3>User Posts</h3>
                 </div>
             </div>
-            <!-- Create button for responsiveness -->
-            <div class="me-3">
-                <div class="create-post-button">
-                    <button class="btn-create-post" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <img src="../assets/icons/edit.svg" alt="Icon" class="button-icon"> Create Post
+
+            <!-- Right Column -->
+            <div class="col-md-3 right-column d-none d-md-block">
+                <div class="search-bar">
+                    <input type="text" class="form-control" placeholder="Search...">
+                </div>
+                <div class="announcement-tab">
+                    <h5>Announcements</h5>
+                    <div class="announcement-box">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h6 class="card-title">Announcement 1</h6>
+                                <p class="card-text">This is the first announcement.</p>
+                            </div>
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h6 class="card-title">Announcement 2</h6>
+                                <p class="card-text">This is the second announcement.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- View All Announcements button -->
+                    <button class="btn btn-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#viewAllModal">
+                        View All Announcements
                     </button>
                 </div>
-            </div>
-        </div>
-
-        <!-- Right Column -->
-        <div class="col-md-3 right-column d-none d-md-block">
-            <div class="search-bar">
-                <input type="text" class="form-control" placeholder="Search...">
-            </div>
-            <div class="announcement-tab">
-                <h5>Announcements</h5>
-                <div class="announcement-box">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="card-title">Announcement 1</h6>
-                            <p class="card-text">This is the first announcement.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="card-title">Announcement 2</h6>
-                            <p class="card-text">This is the second announcement.</p>
+            
+                <!-- Modal -->
+                <div class="modal fade" id="viewAllModal" tabindex="-1" aria-labelledby="viewAllModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="background-color: #C9F6FF;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="viewAllModalLabel">View All Announcements</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Announcement 1</h6>
+                                        <p class="card-text">This is the first announcement.</p>
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Announcement 2</h6>
+                                        <p class="card-text">This is the second announcement.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <button class="btn-announcement">View All Announcements</button>
             </div>
-
-            <!-- Footer Section -->
+            
+            
+          
+            
+                <!-- Footer Section -->
             <footer class="footer">
-                <div class="footer-content">
-                    <p class="text-center"><img src="../assets/icons/Copyright.svg" class="footer-icon" alt="icon"
-                            width="20" height="20">2025
-                        NowUKnow Corp. All Rights Reserved</p>
-                    <p class="text-center">
-                        <a href="terms.php" class="footer-link">Terms of Services</a> |
-                        <a href="privacy.php" class="footer-link">Privacy Policy</a> |
-                        <a href="about.php" class="footer-link">About</a>
-                    </p>
-                </div>
+                    <div class="footer-content">
+                        <p class="text-center"><img src="../assets/icons/Copyright.svg" class="footer-icon" alt="icon"
+                                width="20" height="20">2025 NowUKnow Corp. All Rights Reserved</p>
+                        <p class="text-center">
+                            <a href="terms.php" class="footer-link">Terms of Services</a> |
+                            <a href="privacy.php" class="footer-link">Privacy Policy</a> |
+                            <a href="about.php" class="footer-link">About</a>
+                        </p>
+                    </div>
             </footer>
-        </div>
-    </div>
-    <!-- Create post modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background-color: #C9F6FF;">
-                <div class="modal-header">
-                    <div class="card-header d-flex align-items-center p-1" style="border-color:white">
-                        <img src="../assets/imgs/pfp.jpg" class="profile-pic me-1">
-                        <div>
-                            <h6 class="mb-0 profile-text">jdoe</h6>
-                        </div>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="title-text form-floating mb-5 p-0">
-                        <input type="text" class="form-control text-wrap"
-                            style="background-color: #C9F6FF; border-color: #C9F6FF;" id="floatingInput"
-                            placeholder="Title">
-                        <label for="floatingInput">Title</label>
-                    </div>
-                    <div class="body-text form-floating mb-4 p-0" style="height: auto; max-height: 500px;">
-                        <input type="text" class="form-control"
-                            style="height: 100px; text-align: start; background-color: #67D2E8;" id="floatingInput"
-                            placeholder="Title">
-                        <label for="floatingInput">Write Something...</label>
-                    </div>
-                    <div class="card d-flex flex-row justify-content-center align-items-center mx-auto p-3"
-                        style="background-color: #C9F6FF; font-family: 'Helvetica Rounded';">
-                        <div class="col-5 text-start ps-3">
-                            <h6>Add Attachment(s)</h6>
-                        </div>
-                        <div class="col-7 ps-4 d-flex flex-row justify-content-center align-items-center">
-                            <div class="pictureUpload mx-3">
-                                <label for="pictureInput">
-                                    <img src="../assets/icons/photo icon.svg" style="cursor: pointer">
-                                </label>
-                                <input type="file" id="pictureInput" name="pictureFile" class="form-control d-none"
-                                    accept=".png, .jpg">
-                            </div>
-                            <div class="videoUpload mx-3">
-                                <label for="videoInput">
-                                    <img src="../assets/icons/video.svg" style="cursor: pointer">
-                                </label>
-                                <input type="file" id="videoInput" name="videoFile" class="form-control d-none"
-                                    accept=".mp4, .mov">
-                            </div>
-                            <div class="fileUpload mx-3">
-                                <label for="fileInput">
-                                    <img src="../assets/icons/file.svg" style="cursor: pointer">
-                                </label>
-                                <input type="file" id="fileInput" name="fileUpload" class="form-control d-none"
-                                    accept=".pdf, .doc, .docx">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="addTags pt-3">
-                        <div class="dropdown" style="width: 100%;">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" style="border-radius: 20px; font-family: 'Helvetica Rounded';">
-                                add tags
+
+                    <!-- Create button for responsiveness -->
+                    <div class="me-3">
+                        <div class="create-post-button">
+                            <button class="btn-create-post" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="../assets/icons/edit.svg" alt="Icon" class="button-icon"> Create Post
                             </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" style="background-color: #67D2E8;"
-                        onclick="window.location.href='index.html'">Post</button>
+
+                <!-- Create post modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content" style="background-color: #C9F6FF;">
+                            <div class="modal-header">
+                                <div class="card-header d-flex align-items-center p-1" style="border-color:white">
+                                    <img src="../assets/imgs/pfp.jpg" class="profile-pic me-1">
+                                    <div>
+                                        <h6 class="mb-0 profile-text">jdoe</h6>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="title-text form-floating mb-5 p-0">
+                                    <input type="text" class="form-control text-wrap"
+                                        style="background-color: #C9F6FF; border-color: #C9F6FF;" id="floatingInput"
+                                        placeholder="Title">
+                                    <label for="floatingInput">Title</label>
+                                </div>
+                                <div class="body-text form-floating mb-4 p-0" style="height: auto; max-height: 500px;">
+                                    <input type="text" class="form-control"
+                                        style="height: 100px; text-align: start; background-color: #67D2E8;"
+                                        id="floatingInput" placeholder="Title">
+                                    <label for="floatingInput">Write Something...</label>
+                                </div>
+                                <div class="card d-flex flex-row justify-content-center align-items-center mx-auto p-3"
+                                    style="background-color: #C9F6FF; font-family: 'Helvetica Rounded';">
+                                    <div class="col-5 text-start ps-3">
+                                        <h6>Add Attachment(s)</h6>
+                                    </div>
+                                    <div class="col-7 ps-4 d-flex flex-row justify-content-center align-items-center">
+                                        <div class="pictureUpload mx-3">
+                                            <label for="pictureInput">
+                                                <img src="../assets/icons/photo icon.svg" style="cursor: pointer">
+                                            </label>
+                                            <input type="file" id="pictureInput" name="pictureFile"
+                                                class="form-control d-none" accept=".png, .jpg">
+                                        </div>
+                                        <div class="videoUpload mx-3">
+                                            <label for="videoInput">
+                                                <img src="../assets/icons/video.svg" style="cursor: pointer">
+                                            </label>
+                                            <input type="file" id="videoInput" name="videoFile"
+                                                class="form-control d-none" accept=".mp4, .mov">
+                                        </div>
+                                        <div class="fileUpload mx-3">
+                                            <label for="fileInput">
+                                                <img src="../assets/icons/file.svg" style="cursor: pointer">
+                                            </label>
+                                            <input type="file" id="fileInput" name="fileUpload"
+                                                class="form-control d-none" accept=".pdf, .doc, .docx">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addTags pt-3">
+                                    <div class="dropdown" style="width: 100%;">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                            style="border-radius: 20px; font-family: 'Helvetica Rounded';">
+                                            add tags
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" style="background-color: #67D2E8;"
+                                    onclick="window.location.href='index.html'">Post</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
 
-    <!-- JS Post -->
-    <script src="../assets/js/post.js"></script>
-    <!-- JS Left column -->
-    <script src="../assets/js/leftcolumn.js"></script>
 
-    <!-- Bootstrap Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+            <!-- JS Post -->
+            <script src="../assets/js/post.js"></script>
+            <!-- JS Left column -->
+            <script src="../assets/js/leftcolumn.js"></script>
+
+            <!-- Bootstrap Script -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
 </body>
 
 </html>

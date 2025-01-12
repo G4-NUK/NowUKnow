@@ -21,6 +21,64 @@ body {
     display: flex;
 }
 
+.profile-container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.profile-section {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.background img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+
+
+.profile-pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-top: -60px;
+    margin-left: 250px;
+    background: #fff;
+
+}
+
+.fullname {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: -5px;
+    font-family: Helvetica-Rounded;
+}
+
+.username {
+    color: #777;
+    font-size: 18px;
+    margin-top: 5px;
+    font-family: Helvetica;
+}
+
+.followers {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    font-family: Helvetica;
+}
 
 .edit-profile-btn {
     padding: 10px 20px;
@@ -37,7 +95,16 @@ body {
     background: #0056b3;
 }
 
+.posts-section {
+    padding: 20px;
+    font-family: Helvetica Rounded;
+}
 
+.posts-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 250px;
+}
 
 .post {
     background: #f9f9f9;
@@ -184,6 +251,100 @@ body {
     margin-left: 50px;
 }
 
+
+
+.profile-container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+    position: relative;
+
+}
+
+.profile-info {
+    text-align: center;
+    margin-top: 80px;/
+}
+
+.profile-section {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-pic1 {
+    position: absolute;
+    top: 75%;
+    ;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-pic1 img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.profile-text {
+    font-size: 20px;
+    font-family: "Helvetica Rounded";
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.fullname {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: Helvetica Rounded;
+}
+
+.username {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 5px;
+    font-family: Helvetica Rounded;
+
+}
+
+.followers {
+    font-size: 14px;
+    color: #666;
+    font-family: Helvetica Rounded;
+
+}
+
+.posts-section {
+    padding: 20px;
+    font-family: Helvetica Rounded;
+    text-align: center;
+}
+
+.posts-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+
 .search-bar input {
     width: 100%;
     height: 80%;
@@ -294,6 +455,9 @@ body {
 #viewAllModal .card {
     transition: background-color 0.3s ease-in-out;
 }
+
+
+
 
 .footer {
     width: 100%;
@@ -594,4 +758,3 @@ body {
     }
 
 }
-
