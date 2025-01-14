@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .container-fluid,
@@ -74,12 +74,14 @@ body {
   color: inherit;
   transition: all 0.3s ease;
   border-radius: 5px;
+  
 }
 
 .sidebar ul li a:hover {
   background-color: #d9d9d9;
   color: #000;
 }
+
 
 .navbar {
   font-family: "Helvetica Rounded", Helvetica, sans-serif;
@@ -643,3 +645,10 @@ canvas {
   margin-left: 0px;
 }
 
+.announcement-tab {
+  max-height: 500px; 
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
