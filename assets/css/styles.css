@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow-y: auto;
+    overflow-y: hidden !important;
 }
 
 @font-face {
@@ -127,8 +127,8 @@ body {
 }
 
 .right-column {
+    height: 100vh;
     border-left: 1px solid #35D6ED;
-
 }
 
 .middle-column {
@@ -401,7 +401,29 @@ body {
 }
 
 
-.search-bar input {
+.middle-search-bar input {
+    width: 90%;
+    height: 80%;
+    margin: 10px 30px;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+   
+}
+
+.middle-search-bar {
+    display: none;
+}
+
+@media (max-width: 980px) {
+    .middle-search-bar {
+        display: block;
+        margin-bottom: 15px;
+    }
+}
+
+
+.right-search-bar input {
     width: 100%;
     height: 80%;
     margin: 10px 0;
@@ -423,8 +445,37 @@ body {
     width: 100%;
     transition: all 0.3s ease;
     margin-bottom: 10px;
-    overflow: hidden !important;
+    max-height: 400px;
+    overflow-y: scroll;
+    transition: overflow-y 0.3s ease;
+    scrollbar-gutter: stable;
+    padding-right: 10px; /* Prevent content from overlapping the scrollbar */
 }
+
+
+.announcement-box:hover {
+    overflow-y: auto; 
+}
+
+
+.announcement-box::-webkit-scrollbar {
+    width: 6px; 
+}
+
+.announcement-box::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 3px;  
+}
+
+.announcement-box::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+.announcement-box::-webkit-scrollbar-track {
+    background-color: #f1f1f1;  
+    border-radius: 3px;
+}
+
 
 .announcement-tab {
     background-color: #C9F6FF;
@@ -469,50 +520,6 @@ body {
     margin: 0;
     color: #666;
 }
-
-.btn-announcement {
-    background-color: #C9F6FF;
-    color: #06080F;
-    border: none;
-    width: 100%;
-    height: 40px;
-    font-size: 14px;
-    font-family: "Helvetica Rounded", Helvetica, sans-serif;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-announcement:hover {
-    background-color: #A7D8E4;
-}
-
-.announcement-box .card:hover {
-    background-color: #7091E6;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.announcement-box .card {
-    transition: background-color 0.3s ease-in-out;
-}
-
-.announcement-tab .announcement-modal {
-    transition: background-color 0.3s ease-in-out;
-}
-
-#viewAllModal .card:hover {
-    background-color: #7091E6;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-#viewAllModal .card {
-    transition: background-color 0.3s ease-in-out;
-}
-
-
 
 
 .footer {
