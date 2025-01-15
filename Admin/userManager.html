@@ -33,62 +33,83 @@
         background-color: #7091E6;
         border-color: transparent;
     }
+    @media (max-width: 1000px) {
+        .left-column {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            z-index: 1;
+        }
+
+        .middle-column {
+            width: 100%;
+        }
+
+        .left-column.show {
+            left: 0;
+        }
+
+        .logo {
+            margin-left: 30px;
+        }
+
+        .nav-title {
+            margin-left: 35px;
+        }
+    }
+
+    .hamburger-btn {
+        display: block;
+        font-size: 25px;
+        width: 25px;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 999;
+    }
+
+    @media (min-width: 1000px) {
+        .hamburger-btn {
+            display: none;
+        }
+    }
 </style>
 
 <body>
-    <div class="container p-0">
+    <div class="container">
         <div class="row">
-            <!-- Left Column -->
-            <div class="col-md-3 left-column">
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="#">NowUKnow</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarNav"
-                        aria-controls="sidebarNav" aria-expanded="false" aria-label="Toggle sidebar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </nav>
-                <div class="collapse navbar-collapse" id="sidebarNav">
-                    <div class="sidebar">
-                        <ul>
-                            <li>
-                                <a href="adminDashBoard.html"><span class="nav-title">Dashboard</span></a>
-                            </li>
-                            <li>
-                                <a href="userManager.html"><span class="nav-title">User Manager</span></a>
-                            </li>
-                            <li>
-                                <a href="userList.html"><span class="nav-title">User List</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="logout-button">
-                        <button class="btn-logout">Log Out</button>
-                    </div>
-                </div>
+            <!-- Hamburger Button -->
+            <div class="hamburger-btn" onclick="document.querySelector('.left-column').classList.toggle('show')">&#9776;
+            </div>
 
-                <div class="sidebar d-none d-md-block">
+            <!-- Left Column (Sidebar) -->
+            <div class="col-md-3 left-column">
+                <div class="logo">
+                    <img src="../assets/icons/wordMark big.svg" alt="NowUKnow Logo" width="100" height="100" />
+                </div>
+                <div class="sidebar">
                     <ul>
-                        <li>
-                            <a href="adminDashBoard.html"><span class="nav-title">Dashboard</span></a>
-                        </li>
-                        <li>
-                            <a href="userManager.html"><span class="nav-title">User Manager</span></a>
-                        </li>
-                        <li>
-                            <a href="userList.html"><span class="nav-title">User List</span></a>
-                        </li>
+                        <li><a href="adminDashBoard.html"><span class="nav-title">Dashboard</span></a></li>
+                        <li><a href="userManager.html"><span class="nav-title">User Manager</span></a></li>
+                        <li><a href="userList.html"><span class="nav-title">User List</span></a></li>
                     </ul>
                 </div>
-                <div class="logout-button d-none d-md-block">
+                <div class="logout-container">
                     <button class="btn-logout">Log Out</button>
                 </div>
             </div>
 
-            <!-- Right Column -->
-            <div class="col-md-6 right-column">
+            <!-- Right -->
+            <div class="col-md-9 right-column">
                 <nav class="custom-navbar">
                     <div class="container-fluid d-flex align-items-center justify-content-between">
-                        <span class="nav-title">User Management</span>
+                        <span class="nav-title">User List</span>
                         <form class="search-form" role="search">
                             <div class="input-group rounded-search">
                                 <span class="input-group-text search-icon">
