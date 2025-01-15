@@ -57,7 +57,7 @@ body {
 
 .sidebar ul {
     list-style-type: none;
-    font-family: 'Helvetica Rounded', Helvetica, sans-serif;
+    font-family: 'Helvetica', sans-serif;
 }
 
 .sidebar ul li {
@@ -70,6 +70,7 @@ body {
     color: inherit;
     display: flex;
     align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar ul li a:hover {
@@ -126,6 +127,12 @@ body {
   width: 130px;
   height: 40px;
   margin-top: 50px;
+}
+
+.logout-container {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 33px;
 }
 
 .search-form {
