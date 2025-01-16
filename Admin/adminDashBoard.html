@@ -10,52 +10,52 @@
   <title>NowUKnow</title>
 </head>
 <style>
-        @media (max-width: 1000px) {
-            .left-column {
-                position: fixed;
-                top: 0;
-                left: -250px;
-                width: 250px;
-                height: 100vh;
-                background-color: #fff;
-                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-                transition: left 0.3s ease;
-                z-index: 1;
-            }
+  @media (max-width: 1000px) {
+    .left-column {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      transition: left 0.3s ease;
+      z-index: 1;
+    }
 
-            .middle-column {
-                width: 100%;
-            }
+    .middle-column {
+      width: 100%;
+    }
 
-            .left-column.show {
-                left: 0; 
-            }
+    .left-column.show {
+      left: 0;
+    }
 
-            .logo {
-              margin-left: 30px;
-            }
+    .logo {
+      margin-left: 30px;
+    }
 
-            .nav-title {
-              margin-left: 35px;
-            }
-        }
+    .nav-title {
+      margin-left: 35px;
+    }
+  }
 
-        .hamburger-btn {
-            display: block;
-            font-size: 25px;
-            width: 25px;
-            cursor: pointer;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            z-index: 999;
-        }
+  .hamburger-btn {
+    display: block;
+    font-size: 25px;
+    width: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 999;
+  }
 
-        @media (min-width: 1000px) {
-            .hamburger-btn {
-                display: none; 
-            }
-        }
+  @media (min-width: 1000px) {
+    .hamburger-btn {
+      display: none;
+    }
+  }
 </style>
 
 <body>
@@ -63,7 +63,7 @@
     <div class="row">
       <!-- Hamburger Button -->
       <div class="hamburger-btn" onclick="document.querySelector('.left-column').classList.toggle('show')">&#9776;</div>
-  
+
       <!-- Left Column (Sidebar) -->
       <div class="col-md-3 left-column">
         <div class="logo">
@@ -80,7 +80,7 @@
           <button class="btn-logout">Log Out</button>
         </div>
       </div>
-  
+
       <!-- Right -->
       <div class="col-md-9 right-column">
         <nav class="custom-navbar">
@@ -162,7 +162,7 @@
                   </div>
                 </div>
               </div>
-              
+
             </div>
 
             <!-- Ranking of Users -->
@@ -186,22 +186,53 @@
       </div>
     </div>
 
-      <!--Create Post Button-->
-      <div class="me-3">
-        <div class="create-post-button">
-            <button class="btn-create-post" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img src="../assets/icons/edit.svg" alt="Icon" class="button-icon"> Create Post
-            </button>
-        </div>
+    <!--Create Post Button-->
+    <div class="me-3">
+      <div class="create-post-button">
+        <button class="btn-create-post" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="../assets/icons/edit.svg" alt="Icon" class="button-icon"> Create Post
+        </button>
+      </div>
     </div>
   </div>
 
-  <!-- Bootstrap and Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../assets/js/chart.js"></script>
- <!-- JS Left column -->
-        <script src="../assets/js/leftcolumn.js"></script>
+  <!-- modal create post -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #C9F6FF;">
+        <div class="modal-header">
+          <div class="card-header d-flex align-items-center p-1" style="border-color:white">
+            <div>
+              <h6 class="mb-0 profile-text">Announcement</h6>
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="title-text form-floating mb-5 p-0">
+            <input type="text" class="form-control" style="background-color: #C9F6FF; border-color: #C9F6FF;"
+              id="floatingInput" placeholder="Title">
+            <label for="floatingInput">Title</label>
+          </div>
+          <div class="body-text form-floating mb-4 p-0" style="height: auto; max-height: 500px;">
+            <textarea class="form-control" style="height: 100px; text-align: start; background-color: #67D2E8;"
+              id="floatingInput" placeholder="Write Something..."></textarea>
+            <label for="floatingInput">Description...</label>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" style="background-color: #67D2E8;"
+              onclick="window.location.href='adminDashBoard.html'">Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap and Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/chart.js"></script>
+    <!-- JS Left column -->
+    <script src="../assets/js/leftcolumn.js"></script>
 </body>
 
 </html>
