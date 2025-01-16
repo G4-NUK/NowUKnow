@@ -1,24 +1,16 @@
-
 @font-face {
     font-family: Helvetica-Rounded;
     src: url(../fonts/Helvetica-Rounded-Bold.otf);
 
 }
 
-.moveLeft {
-    margin-left: -25px;
-}
-
 .moveRight {
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 p {
     color: white;
-}
-
-.signUpTittle {
-    font-family: "Helvetica Rounded";
+    font-size: 18px;
 }
 
 .container {
@@ -31,8 +23,7 @@ p {
 }
 
 .headerSection {
-    padding-bottom: 30px;
-    margin-top: -280px;
+    margin-top: -120px;
 }
 
 .headerSection h1 {
@@ -55,12 +46,12 @@ p {
 }
 
 .logoWordmark {
-    margin-bottom: 350px;
+    margin-bottom: 150px;
     margin-left: -18px;
 }
 
 .logoWordmark img {
-    width: 200px;
+    width: 310px;
     height: auto;
 }
 
@@ -84,12 +75,32 @@ p {
     color: white;
     border-radius: 200px;
     width: 100%;
-    max-width: 160px;
-    height: 50px;
+    max-width: 200px;
+    height: 60px;
     padding: 8px 16px;
     text-align: center;
     display: inline-block;
     line-height: 30px;
+}
+
+@media (max-width: 990px) {
+    .logoWordmark img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
+        margin-top: 450px;
+    }
+
+    .logoWordmark {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        max-width: 450px !important;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -99,17 +110,31 @@ p {
         align-items: center;
     }
 
+    .logoWordmark img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
+        margin-top: 80px;
+        padding-top: 400px;
+    }
+
+    .logoWordmark {
+        display: flex;
+        justify-content: center;
+    }
+
     .headerSection {
         order: 0;
         display: none;
         padding-bottom: 10px;
-        margin-top: 50px;
+        margin-top: -100px;
     }
 
     .card {
         order: 1;
         margin: 20px 0;
-        width: 90%;
+        width: 100%;
     }
 
     .line {
@@ -147,7 +172,7 @@ p {
     .card {
         order: 1;
         margin: 20px 0;
-        width: 90%;
+        width: 100%;
     }
 
     .info2 {
@@ -162,21 +187,5 @@ p {
 
     .btnLearnMore {
         margin-top: 100px;
-    }
-
-    .logoWordmark img {
-        width: 100%;
-        max-width: 200px;
-        height: auto;
-        object-fit: contain;
-    }
-
-    .logoWordmark{
-        display: flex;
-        justify-content: center;
-    }
-
-    .card {
-        max-width: 350px !important;
     }
 }
