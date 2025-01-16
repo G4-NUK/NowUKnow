@@ -30,8 +30,9 @@
             border-radius: 20px;
             padding: 30px;
             width: 100%;
-            max-width: 400px;
+            max-width: 470px;
             height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         .btnSignUp {
@@ -40,7 +41,7 @@
             border-radius: 200px;
             width: 100%;
             max-width: 200px;
-            height: 50px;
+            height: 60px;
             margin-left: auto;
             margin-right: auto;
             display: block;
@@ -49,6 +50,12 @@
 
         .customButtonText {
             font-family: "Helvetica Rounded";
+            font-size: 18px;
+        }
+
+        .signUpTittle {
+            font-family: "Helvetica Rounded";
+            font-size: 33px;
         }
 
         .btnSignUp:hover {
@@ -58,19 +65,20 @@
 
         .form-control {
             border-radius: 200px;
-            width: 90%;
-            max-width: 320px;
-            height: 30px;
+            width: 100%;
+            max-width: 400px;
+            height: 40px;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
 
         .form-label {
-            padding-left: 40px;
+            padding-left: 35px;
             color: white;
             margin: -20px;
             font-family: Helvetica, sans-serif;
+            text-align: start;
         }
 
         .btnModal {
@@ -83,9 +91,20 @@
             color: white;
         }
 
+        .modal-dialog {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            margin: 0;
+        }
+
         .modal-content {
             background-color: #3D68A2;
             color: white;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -95,18 +114,19 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-6 col-12 col-sm-0 px-5 mt-5 d-flex align-items-bottom justify-content-center">
                 <div class="leftSection ">
-                    <div class="logoWordmark d-flex align-items-top">
+                    <div class="logoWordmark">
                         <img src="../assets/icons/logowordmark.svg" alt="logowordmark">
                     </div>
                     <div class="headerSection p-0 d-flex flex-column text-start">
                         <h1 class="h1 fs-1 fs-md-2 fs-sm-3 m-0">Create New Account</h1>
-                        <h6 class="fs-6 fs-md-5 m-0 p-2">Already have an account? <a href="login.html" class="loginLink">Log in</a></h6>
+                        <h6 class="fs-6 fs-md-5 m-0 p-2">Already have an account? <a href="login.html"
+                                class="loginLink">Log in</a></h6>
                     </div>
-                    
+
 
                     <div class="col-lg-12 col-12 text-center">
                         <div class="info">
-                            <div class="line" style="border-top: 2px solid white; width: 34%; margin: 10px 0;"></div>
+                            <div class="line" style="border-top: 2px solid white; width: 30%; margin: 10px 0;"></div>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo quia
                                 maioress</p>
                             <!-- button in learn more modal -->
@@ -118,17 +138,17 @@
             </div>
 
             <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
-                <div class="card">
+                <div class="card mt-3">
                     <div class="h3 my-4 mt-0 text-center signUpTittle">Create Account</div>
                     <form id="SignUpForm" method="POST">
                         <div class="d-flex gap-3 mb-2">
                             <div class="flex-grow-1">
-                                <label for="firstname" class="form-label moveLeft">First Name</label>
+                                <label for="firstname" class="form-label moveLeft my-1">First Name</label>
                                 <input type="text" id="firstname" class="form-control" name="firstname" required>
                             </div>
 
                             <div class="flex-grow-1">
-                                <label for="lastname" class="form-label moveLeft">Last Name</label>
+                                <label for="lastname" class="form-label moveLeft my-1">Last Name</label>
                                 <input type="text" id="lastname" class="form-control" name="lastname" required>
                             </div>
                         </div>
@@ -181,7 +201,8 @@
             <!-- Modal for learn more (small version) -->
             <div class="col-lg-6 col-12 text-center">
                 <div class="info2">
-                    <p class="info2Content py-4 px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo quia maiores,
+                    <p class="info2Content py-4 px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                        nemo quia maiores,
                         soluta iusto eveniet delectus illo non laudantium inventore alias ipsam saepe tempora omnis rem
                         eum
                         vel quis animi?</p>
