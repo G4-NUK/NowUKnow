@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
     <title>NowUKnow</title>
-    <style>
 
-        body{
+    <style>
+        body {
             overflow-x: hidden !important;
         }
 
@@ -152,36 +151,47 @@
                 <div class="sidebar">
                     <ul>
                         <li>
-                            <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
+                            <a href="index.html"
+                                style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
                                 <i class="fa-solid fa-house nav-icon" style="font-size: 24px; color: #06080F;"></i>
-                                <span class="nav-title" style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Home</span>
+                                <span class="nav-title"
+                                    style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Home</span>
                             </a>
                         </li>
                         <li>
-                            <a href="users/profile.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
+                            <a href="users/profile.html"
+                                style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
                                 <i class="fa-solid fa-user nav-icon" style="font-size: 24px; color: #06080F;"></i>
-                                <span class="nav-title" style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Profile</span>
+                                <span class="nav-title"
+                                    style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Profile</span>
                             </a>
                         </li>
                         <li>
-                            <a href="tags/explore.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
+                            <a href="tags/explore.html"
+                                style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
                                 <i class="fa-solid fa-hashtag nav-icon" style="font-size: 24px; color: #06080F;"></i>
-                                <span class="nav-title" style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Tags</span>
+                                <span class="nav-title"
+                                    style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Tags</span>
                             </a>
                         </li>
                         <li>
-                            <a href="notif.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
+                            <a href="notif.html"
+                                style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
                                 <i class="fa-solid fa-bell nav-icon" style="font-size: 24px; color: #06080F;"></i>
-                                <span class="nav-title" style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Notification</span>
+                                <span class="nav-title"
+                                    style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Notification</span>
                             </a>
                         </li>
                         <li>
-                            <a href="bookmarks.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F">
+                          
+                            <a href="bookmark.html"
+                                style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F">
                                 <i class="fa-solid fa-bookmark nav-icon" style="font-size: 24px; color: #06080F;"></i>
-                                <span class="nav-title" style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Bookmarks</span>
+                                <span class="nav-title"
+                                    style="font-family: Helvetica, Arial, sans-serif; font-weight: normal; font-size: 20px;">Bookmarks</span>
                             </a>
                         </li>
-                    </ul>     
+                    </ul>
                 </div>
                 <div class="logout-container">
                     <button class="btn-logout">Log Out</button>
@@ -284,7 +294,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Footer Section -->
                 <footer class="footer">
                     <div class="footer-content">
@@ -297,82 +307,81 @@
                         </p>
                     </div>
                 </footer>
-            
-        <!-- modal create post -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content" style="background-color: #C9F6FF;">
-                    <div class="modal-header">
-                        <div class="card-header d-flex align-items-center p-1" style="border-color:white">
-                            <img src="assets/imgs/pfp.jpg" class="profile-pic me-1">
-                            <div>
-                                <h6 class="mb-0 profile-text">jdoe</h6>
-                            </div>
-                        </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="title-text form-floating mb-5 p-0">
-                            <input type="text" class="form-control text-wrap"
-                                style="background-color: #C9F6FF; border-color: #C9F6FF;" id="floatingInput"
-                                placeholder="Title">
-                            <label for="floatingInput">Title</label>
-                        </div>
-                        <div class="body-text form-floating mb-4 p-0" style="height: auto; max-height: 500px;">
-                            <input type="text" class="form-control"
-                                style="height: 100px; text-align: start; background-color: #67D2E8;" id="floatingInput"
-                                placeholder="Title">
-                            <label for="floatingInput">Write Something...</label>
-                        </div>
-                        <div class="card d-flex flex-row justify-content-center align-items-center mx-auto p-3"
-                            style="background-color: #C9F6FF; font-family: 'Helvetica Rounded';">
-                            <div class="col-5 text-start ps-3">
-                                <h6>Add Attachment(s)</h6>
-                            </div>
-                            <div class="col-7 ps-4 d-flex flex-row justify-content-center align-items-center">
-                                <div class="pictureUpload mx-3">
-                                    <img src="assets/icons/photo icon.svg">
-                                </div>
-                                <div class="videoUpload mx-3">
-                                    <img src="assets/icons/video.svg">
-                                </div>
-                                <div class="fileUpload mx-3">
-                                    <img src="assets/icons/file.svg">
+            </div>
+
+            <!-- modal create post -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color: #C9F6FF;">
+                        <div class="modal-header">
+                            <div class="card-header d-flex align-items-center p-1" style="border-color:white">
+                                <img src="assets/imgs/pfp.jpg" class="profile-pic me-1">
+                                <div>
+                                    <h6 class="mb-0 profile-text">jdoe</h6>
                                 </div>
                             </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="addTags pt-3">
-                            <div class="dropdown" style="width: 100%;">
-                                <button class="btn btn-secondary dropdown-toggle" type="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false"
-                                    style="border-radius: 20px; font-family: 'Helvetica Rounded';">
-                                    add tags
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                        <div class="modal-body">
+                            <div class="title-text form-floating mb-5 p-0">
+                                <input type="text" class="form-control text-wrap"
+                                    style="background-color: #C9F6FF; border-color: #C9F6FF;" id="floatingInput"
+                                    placeholder="Title">
+                                <label for="floatingInput">Title</label>
+                            </div>
+                            <div class="body-text form-floating mb-4 p-0" style="height: auto; max-height: 500px;">
+                                <textarea class="form-control"
+                                    style="height: 150px; text-align: start; background-color: #67D2E8;"
+                                    id="floatingInput" placeholder="Title"></textarea>
+                                <label for="floatingInput">Write Something...</label>
+                            </div>
+                            <div class="card d-flex flex-row justify-content-center align-items-center mx-auto p-3"
+                                style="background-color: #C9F6FF; font-family: 'Helvetica Rounded';">
+                                <div class="col-5 text-start ps-3">
+                                    <h6>Add Attachment(s)</h6>
+                                </div>
+                                <div class="col-7 ps-4 d-flex flex-row justify-content-center align-items-center">
+                                    <div class="pictureUpload mx-3">
+                                        <img src="assets/icons/photo icon.svg">
+                                    </div>
+                                    <div class="videoUpload mx-3">
+                                        <img src="assets/icons/video.svg">
+                                    </div>
+                                    <div class="fileUpload mx-3">
+                                        <img src="assets/icons/file.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dropdown tags -->
+                            <div class="addTags pt-3">
+                                <div class="dropdown" style="width: 30%; margin-bottom: 20px;">
+                                    <select class="form-select" id="tagsType"
+                                        style="border-radius: 20px; font-family: 'Helvetica Rounded'; background-color: #81c9ed;; color: rgb(64, 59, 59);">
+                                        <option selected>add tags</option>
+                                        <option value="1">#Action</option>
+                                        <option value="2">#Action1</option>
+                                        <option value="3">#Action3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" style="background-color: #67D2E8;"
-                            onclick="window.location.href='index.html'">Post</button>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" style="background-color: #67D2E8;"
+                                onclick="window.location.href='index.html'">Post</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- JS Post -->
-    <script src="assets/js/post.js"></script>
-    <!-- JS Left column -->
-    <script src="assets/js/leftcolumn.js"></script>
-    <!-- Bootstrap Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+            <!-- JS Post -->
+            <script src="assets/js/post.js"></script>
+            <!-- JS Left column -->
+            <script src="assets/js/leftcolumn.js"></script>
+            <!-- Bootstrap Script -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
 </body>
 
 </html>

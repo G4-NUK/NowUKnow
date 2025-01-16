@@ -681,7 +681,7 @@ canvas {
 }
 
 .create-post-button {
-  position: absolute;
+  position: fixed;
   bottom: 50px;
   right: 50px;
 
@@ -690,7 +690,7 @@ canvas {
 .btn-create-post {
   background-color: #7091E6;
   font-family: "Helvetica Rounded";
-  width: 150px;
+  width: 50px;
   height: 45px;
   font-size: 15px;
   margin-top: 50px;
