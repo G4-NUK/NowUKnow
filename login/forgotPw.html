@@ -30,8 +30,9 @@
             border-radius: 20px;
             padding: 30px;
             width: 100%;
-            max-width: 400px;
-            height: auto;
+            max-width: 430px;
+            height: 550px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         .btnLogin {
@@ -40,7 +41,7 @@
             border-radius: 200px;
             width: 100%;
             max-width: 200px;
-            height: 54px;
+            height: 60px;
             margin-left: auto;
             margin-right: auto;
             display: block;
@@ -48,23 +49,30 @@
 
         .customButtonText {
             font-family: "Helvetica Rounded";
+            font-size: 18px;
+        }
+
+        .signUpTittle {
+            font-family: "Helvetica Rounded";
+            font-size: 30px;
         }
 
         .form-control {
             border-radius: 200px;
-            width: 90%;
+            width: 100%;
             max-width: 320px;
-            height: 35px;
+            height: 42px;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
 
         .form-label {
-            padding-left: 40px;
+            padding-left: 35px;
             color: white;
-            margin-left: -20px;
+            margin-left: 3px;
             font-family: Helvetica, sans-serif;
+            text-align: start;
         }
 
         .btnLogin:hover {
@@ -82,9 +90,20 @@
             color: white;
         }
 
+        .modal-dialog {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            margin: 0;
+        }
+
         .modal-content {
             background-color: #3D68A2;
             color: white;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
         }
     </style>
 
@@ -93,7 +112,7 @@
 <body>
     <div class="container-fluid" id="container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-6 col-12 col-sm-0 p-0 mt-5 d-flex align-items-bottom justify-content-center">
+            <div class="col-lg-6 col-12 col-sm-0 px-5 mt-5 d-flex align-items-bottom justify-content-center">
                 <div class="leftSection">
                     <div class="logoWordmark">
                         <img src="../assets/icons/logowordmark.svg" alt="logowordmark">
@@ -105,7 +124,7 @@
 
                     <div class="col-lg-12 col-12 text-center">
                         <div class="info">
-                            <div class="line" style="border-top: 2px solid white; width: 34%; margin: 10px 0;"></div>
+                            <div class="line" style="border-top: 2px solid white; width: 30%; margin: 10px 0;"></div>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo quia
                                 maioress</p>
                             <!-- button in learn more modal -->
@@ -118,7 +137,7 @@
 
             <div class="col-lg-6 col-12 p-0 d-flex align-items-center justify-content-center">
                 <div class="card">
-                    <div class="h3 my-4 mt-0 text-center signUpTittle">Reset your Password</div>
+                    <div class="h3 my-4 mt-2 text-center signUpTittle">Reset your Password</div>
                     <form id="ForgotPwForm" method="POST">
                         <div class="mb-2">
                             <label for="username" class="form-label">Username</label>
@@ -151,7 +170,8 @@
             <!-- Modal for learn more (small version)-->
             <div class="col-lg-6 col-12 text-center">
                 <div class="info2">
-                    <p class="infoContent py-4 px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo quia maiores,
+                    <p class="infoContent py-4 px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo
+                        quia maiores,
                         soluta iusto eveniet delectus illo non laudantium inventore alias ipsam saepe tempora omnis rem
                         eum
                         vel quis animi?</p>

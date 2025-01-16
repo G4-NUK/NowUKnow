@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: Helvetica-Rounded;
     src: url(../fonts/Helvetica-Rounded-Bold.otf);
@@ -7,10 +6,7 @@
 
 p {
     color: white;
-}
-
-.signUpTittle {
-    font-family: "Helvetica Rounded";
+    font-size: 18px;
 }
 
 .container {
@@ -20,6 +16,10 @@ p {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
+}
+
+.headerSection {
+    margin-top: -35px;
 }
 
 .headerSection h1 {
@@ -34,17 +34,17 @@ p {
 }
 
 .logoWordmark {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     margin-left: -18px;
 }
 
 .logoWordmark img {
-    width: 200px;
+    width: 310px;
     height: auto;
 }
 
 .img-fluid {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .info {
@@ -63,8 +63,8 @@ p {
     color: white;
     border-radius: 200px;
     width: 100%;
-    max-width: 160px;
-    height: 50px;
+    max-width: 206px;
+    height: 60px;
     padding: 8px 16px;
     text-align: center;
     display: inline-block;
@@ -80,15 +80,15 @@ p {
         margin-top: 200px;
     }
 
-    .logoWordmark{
+    .logoWordmark {
         display: flex;
         justify-content: center;
     }
 
     .card {
-        max-width: 350px !important;
+        max-width: 450px !important;
     }
-    
+
 }
 
 @media (max-width: 768px) {
@@ -98,15 +98,30 @@ p {
         align-items: center;
     }
 
+    .logoWordmark img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
+        margin-top: 280px;
+    }
+
+    .logoWordmark {
+        display: flex;
+        justify-content: center;
+    }
+
     .headerSection {
         order: 0;
         display: none;
+        padding-bottom: 10px;
+        margin-top: 50px;
     }
 
     .card {
         order: 1;
         margin: 20px 0;
-        width: 90%;
+        width: 100%;
     }
 
     .line {
@@ -144,7 +159,7 @@ p {
     .card {
         order: 1;
         margin: 20px 0;
-        width: 90%;
+        width: 100%;
     }
 
     .info2 {
