@@ -1,6 +1,5 @@
 const barDailyActiveUsers = document.getElementById('dailyActiveUsers');
 const ctxrankingTags = document.getElementById('rankingTags');
-const ctxrankingUsers = document.getElementById('rankingUsers');
 
 const labels = ['M', 'T', 'W', 'Th', 'F', 'Sat', 'Sun'];
 
@@ -45,59 +44,41 @@ new Chart(barDailyActiveUsers, {
     }
 });
 
-
 new Chart(ctxrankingTags, {
-    type: 'doughnut',
+    type: 'bar',
     data: {
         labels: ['Cooking', 'Gaming', 'Educational', 'Life', 'Beauty'],
         datasets: [{
             data: [55.6, 22.2, 11.1, 5.6, 5.6],
             backgroundColor: [
-                '#FDB45C', 
-                '#46BFBD', 
-                '#949FB1', 
-                '#4D5360', 
-                '#FFC870' 
+                '#FDB45C',
+                '#46BFBD',
+                '#949FB1',
+                '#4D5360',
+                '#FFC870'
             ],
-            hoverOffset: 8
+            hoverBackgroundColor: [
+                '#FFC870',
+                '#5AD3D1',
+                '#A8B3C5',
+                '#616774',
+                '#FFD980'
+            ]
         }]
     },
     options: {
-        responsive: true,
-        maintainAspectRatio: false, 
-        plugins: {
-            legend: {
-                position: 'right',
-            }
-        },
-    }
-});
-new Chart(ctxrankingUsers, {
-    type: 'doughnut',
-    data: {
-        labels: ['Jermaine', 'Jerome', 'Joseph', 'Chan', 'Johann', 'Cindy', 'Tm', 'Kent'],
-        datasets: [{
-            data: [33.1, 24.8, 16.5, 8.3, 5.8, 4.1, 4.1, 3.3],
-            backgroundColor: [
-                '#5DA5DA',
-                '#FAA43A',
-                '#60BD68',
-                '#F17CB0',
-                '#B2912F',
-                '#B276B2',
-                '#DECF3F',
-                '#F15854'
-            ],
-            hoverOffset: 8
-        }]
-    },
-    options: {
+        indexAxis: 'y', 
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
             legend: {
-                position: 'right',
-            }
+                display: false 
+            },
         },
+        scales: {
+            x: {
+                beginAtZero: true
+            }
+        }
     }
 });
