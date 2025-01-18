@@ -22,9 +22,9 @@ class Post
     public $ratingID; 
     public $comment; 
     public $profilePicture;
-    public $tagColor;
+    public $tagImg;
 
-    public function __construct($postID, $title, $description, $tags, $attachmentName, $attachmentPath, $userName, $ratingID, $comment, $profilePicture, $tagColor)
+    public function __construct($postID, $title, $description, $tags, $attachmentName, $attachmentPath, $userName, $ratingID, $comment, $profilePicture, $tagImg)
     {
         $this->postID = $postID;
         $this->title = $title;
@@ -36,7 +36,7 @@ class Post
         $this->ratingID = $ratingID;
         $this->comment = $comment;
         $this->profilePicture = $profilePicture;
-        $this->tagColor = $tagColor;
+        $this->tagImg = $tagImg;
     }
 
     public function createPost()
@@ -64,7 +64,7 @@ class Post
                 <div class="card-body p-5">
                     <h2 class="card-text title-text p-1">' . $this->title . '</h2>
                     <p class="card-text body-text px-2">' . nl2br(htmlspecialchars($this->description)) . '</p>
-                    <button class="btn btn-primary follow-btn ms-1 mt-0 mb-2" style="background-color:' . $this->tagColor . ';">' . $this->tags . '</button>
+                    <button class="btn btn-primary follow-btn ms-1 mt-0 mb-2" style="background-color: grey;">' . $this->tags . '</button>
                     <!-- bottom buttons -->
                     <div class="d-flex justify-content-between">
                         <div class="d-flex">

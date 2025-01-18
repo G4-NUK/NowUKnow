@@ -161,7 +161,15 @@ $userID = $_SESSION['userID'];
                     <form action="../login.php" method="POST">
                         <button type="submit" class="btn-logout">Log Out</button>
                     </form>
-                    <?php include("../assets/shared/logout.php"); ?>
+                    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        session_start();    
+        session_unset();    
+        session_destroy();  
+        header("Location: login/login.php");  
+         exit();
+        }
+?>
                 </div>
             </div>
 
