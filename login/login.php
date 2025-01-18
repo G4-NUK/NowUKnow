@@ -1,3 +1,50 @@
+<?php
+include("../assets/shared/connect.php");
+
+session_start();
+session_destroy();
+session_start();
+$error = "";
+
+
+if (isset($_POST['btnLogin'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $username = str_replace('\'', '', $username);
+    $password = str_replace('\'', '', $password);
+
+    $loginQuery = "SELECT * FROM users WHERE userName = '$username' AND password = '$password'";
+    $loginResult = executeQuery($loginQuery);
+
+    $_SESSION['userID'] = "";
+    $_SESSION['firstName'] = "";
+    $_SESSION['lastName'] = "";
+    $_SESSION['userName'] = "";
+    $_SESSION['email'] = "";
+    $_SESSION['birthday'] = "";
+    $_SESSION['userType'] = "";
+    $_SESSION['phoneNumber'] = "";
+    
+
+    if (mysqli_num_rows($loginResult) > 0) {
+        while ($user = mysqli_fetch_assoc($loginResult)) {
+            $_SESSION['userID'] = $user['userID'];
+            $_SESSION['firstName'] = $user['firstName'];
+            $_SESSION['lastName'] = $user['lastName'];
+            $_SESSION['userName'] = $user['userName'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['birthday'] = $user['birthday'];
+            $_SESSION['userType'] = $user['userType'];
+            $_SESSION['phoneNumber'] = $user['phoneNumber'];
+            header("Location: ../users/index.php?userID=" . $_SESSION['userID']);
+        }
+    } else {
+        $error = "No User";
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -130,18 +177,19 @@
 <body>
     <div class="container-fluid" id="container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-6 col-12 col-sm-0 px-5 mt-5 d-flex align-items-bottom justify-content-center">
+            <div class="col-lg-6 col-12 col-sm-0 p-0 mt-5 d-flex align-items-bottom justify-content-center">
                 <div class="leftSection">
                     <div class="headerSection p-0 d-flex flex-column text-start align-items-center">
                         <img src="../assets/icons/Icon white.svg" alt="Logo" class="img-fluid logo">
                     </div>
-                    <div class="nowUKnow">
-                        <img src="../assets/icons/wordMark white small.svg" alt="WordMark Logo" class="img-fluid mb-4">
+                    <div class="NowUKnow">
+                        <img src="../assets/icons/wordMark white small.svg" alt="WordMark Logo"
+                            class="img-fluid mb-4">
                     </div>
 
                     <div class="col-lg-12 col-12 text-center">
                         <div class="info">
-                            <div class="line" style="border-top: 2px solid white; width: 30%; margin: 10px 0;"></div>
+                            <div class="line" style="border-top: 2px solid white; width: 34%; margin: 10px 0;"></div>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo quia
                                 maioress</p>
                             <!-- button in learn more modal -->
@@ -154,25 +202,29 @@
 
             <div class="col-lg-6 col-12 p-0 d-flex align-items-center justify-content-center">
                 <div class="card">
+                    <?php if ($error == "NO USER") { ?>
+                        <div class="alert alert-danger mb-3" role="alert">
+                            No user found
+                        </div>
+                    <?php } ?>
                     <div class="h3 my-4 text-center loginTitle">Login</div>
-                    <form id="loginForm" method="POST">
-                        <div class="mb-0">
+                    <form method="POST" id="loginForm">
+                        <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" id="username" class="form-control" name="username" required>
                         </div>
-                        <div class="mb-0">
+                        <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" class="form-control" name="password" required
-                                pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
-                                title="Password must be at least 8 characters long, contain at least one letter, one number, and one special character (!@#$%^&*).">
+                            <input type="password" id="password" class="form-control" name="password" required>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <a href="forgotPw.html" class="forgotPassword text ms-auto">Forgot Password?</a>
+                            <a href="forgotPw.html" class="text ms-auto" style="color: aliceblue;">Forgot Password?</a>
                         </div>
                         <div class="mt-4">
-                            <button type="submit" class="btn btnLogin mb-3 customButtonText">Login</button>
+                            <button class="btn btnLogin mb-3 customButtonText" name="btnLogin"
+                                type="submit">Login</button>
                             <button type="button" class="btn btnSignUp customButtonText"
-                                onclick="window.location.href='signup.html';">Sign Up</button>
+                                onclick="window.location.href='signup.php';">Sign Up</button>
                         </div>
                     </form>
                 </div>
