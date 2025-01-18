@@ -1,5 +1,5 @@
 <?php
-include("../assets/shared/connect.php");
+include("assets/shared/connect.php");
 
 session_start();
 session_destroy();
@@ -37,7 +37,7 @@ if (isset($_POST['btnLogin'])) {
             $_SESSION['birthday'] = $user['birthday'];
             $_SESSION['userType'] = $user['userType'];
             $_SESSION['phoneNumber'] = $user['phoneNumber'];
-            header("Location: ../users/index.php?userID=" . $_SESSION['userID']);
+            header("Location: users/index.php?userID=" . $_SESSION['userID']);
         }
     } else {
         $error = "No User";
@@ -51,7 +51,7 @@ if (isset($_POST['btnLogin'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
     <title>NowUKnow | Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -59,7 +59,7 @@ if (isset($_POST['btnLogin'])) {
 
     <style>
         body {
-            background: url('../assets/icons/landing bg3.svg') no-repeat center center;
+            background: url('assets/icons/landing bg3.svg') no-repeat center center;
             font-family: Helvetica, sans-serif;
             background-size: cover;
             height: 100vh;
@@ -180,10 +180,10 @@ if (isset($_POST['btnLogin'])) {
             <div class="col-lg-6 col-12 col-sm-0 p-0 mt-5 d-flex align-items-bottom justify-content-center">
                 <div class="leftSection">
                     <div class="headerSection p-0 d-flex flex-column text-start align-items-center">
-                        <img src="../assets/icons/Icon white.svg" alt="Logo" class="img-fluid logo">
+                        <img src="assets/icons/Icon white.svg" alt="Logo" class="img-fluid logo">
                     </div>
                     <div class="NowUKnow">
-                        <img src="../assets/icons/wordMark white small.svg" alt="WordMark Logo"
+                        <img src="assets/icons/wordMark white small.svg" alt="WordMark Logo"
                             class="img-fluid mb-4">
                     </div>
 
