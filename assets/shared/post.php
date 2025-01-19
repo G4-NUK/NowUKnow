@@ -4,7 +4,7 @@
 
     // Query for Post
     $postQuery = "SELECT posts.postID, users.userName, users.profilePicture, posts.title, posts.description, tags.tags AS tags,
-                    tags.tagColor, attachments.attachmentName, attachments.attachmentPath, ratings.ratingValue AS rating, 
+                    tags.tagImg, attachments.attachmentName, attachments.attachmentPath, ratings.ratingValue AS rating, 
                     comments.content AS comment 
                     FROM users 
                     LEFT JOIN posts ON users.userID = posts.userID 
@@ -30,7 +30,7 @@
             $postRow['rating'],
             $postRow['comment'],
             $postRow['profilePicture'],
-            $postRow['tagColor']
+            $postRow['tagImg']
         );
 
         array_push($postsList, $post);

@@ -2,16 +2,21 @@
 include("../assets/shared/connect.php");
 include("../assets/shared/classes.php");
 include("../assets/shared/post.php");
+include("../assets/shared/process.php");
 
-session_start(); 
+session_start();
 session_destroy();
-session_start(); 
+session_start();
 
 if (isset($_GET['userID']) && !isset($_SESSION['userID'])) {
-    $_SESSION['userID'] = $_GET['userID']; 
+    $_SESSION['userID'] = $_GET['userID'];
 }
 
 $userID = $_SESSION['userID'];
+
+if ($_SESSION['userID'] == "") {
+    header("Location: ../login.php");
+}
 
 ?>
 
@@ -131,7 +136,7 @@ $userID = $_SESSION['userID'];
                             </a>
                         </li>
                         <li>
-                            <a href="tags/explore.html"
+                            <a href="../tags/explore.php"
                                 style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
                                 <i class="fa-solid fa-hashtag nav-icon" style="font-size: 24px; color: #06080F;"></i>
                                 <span class="nav-title"
@@ -147,7 +152,7 @@ $userID = $_SESSION['userID'];
                             </a>
                         </li>
                         <li>
-                            <a href="bookmark.html"
+                            <a href="../bookmarks.php?userID=<?php echo $userID ?>"
                                 style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F">
                                 <i class="fa-solid fa-bookmark nav-icon" style="font-size: 24px; color: #06080F;"></i>
                                 <span class="nav-title"
@@ -161,15 +166,6 @@ $userID = $_SESSION['userID'];
                     <form action="../login.php" method="POST">
                         <button type="submit" class="btn-logout">Log Out</button>
                     </form>
-                    <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        session_start();    
-        session_unset();    
-        session_destroy();  
-        header("Location: login/login.php");  
-         exit();
-        }
-?>
                 </div>
             </div>
 
