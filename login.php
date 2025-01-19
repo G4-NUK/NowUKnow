@@ -190,8 +190,7 @@ if (isset($_POST['btnLogin'])) {
                     <div class="col-lg-12 col-12 text-center">
                         <div class="info">
                             <div class="line" style="border-top: 2px solid white; width: 34%; margin: 10px 0;"></div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo quia
-                                maioress</p>
+                            <p>NowUKnow: Learn, Share, Connect, and Grow</p>
                             <!-- button in learn more modal -->
                             <button type="button" class="btnLearnMore mt-3 customButtonText" data-bs-toggle="modal"
                                 data-bs-target="#learnMore">Learn More?</button>
@@ -232,11 +231,7 @@ if (isset($_POST['btnLogin'])) {
 
             <div class="col-lg-6 col-12 text-center">
                 <div class="info2">
-                    <p class="infoContent py-4 px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo
-                        quia maiores,
-                        soluta iusto eveniet delectus illo non laudantium inventore alias ipsam saepe tempora omnis rem
-                        eum
-                        vel quis animi?</p>
+                    <p class="infoContent py-4 px-5">NowUKnow: Learn, Share, Connect, and Grow</p>
                     <!-- button in learn more modal (small screen)-->
                     <button type="button" class="btnLearnMore my-4 mx-5" data-bs-toggle="modal"
                         data-bs-target="#learnMore">Learn More?</button>
