@@ -19,8 +19,8 @@ class Post
     public $attachmentName;
     public $attachmentPath;
     public $userName;
-    public $ratingID; 
-    public $comment; 
+    public $ratingID;
+    public $comment;
     public $profilePicture;
     public $tagImg;
 
@@ -40,11 +40,11 @@ class Post
     }
 
     public function createPost()
-        {
-            return '
+    {
+        return '
             <div class="card custom-card mb-4">
                 <div class="card-header d-flex align-items-center p-3" style="border-color:white">
-                    <img src="../assets/imgs/'. $this->profilePicture . '" class="profile-pic me-1">
+                    <img src="../assets/imgs/' . $this->profilePicture . '" class="profile-pic me-1">
                     <div>
                         <h6 class="mb-0 profile-text">' . $this->userName . '</h6>
                     </div>
@@ -59,7 +59,7 @@ class Post
                     </div>
                 </div>
                 <!-- uploaded media -->
-                <img src="../assets/imgs/'. $this->attachmentName . '" class="card-img-top">
+                <img src="../assets/imgs/' . $this->attachmentName . '" class="card-img-top">
                 <!-- body -->
                 <div class="card-body p-5">
                     <h2 class="card-text title-text p-1">' . $this->title . '</h2>
@@ -71,9 +71,16 @@ class Post
                             <span class="bottom-buttons icon-button" data-bs-toggle="modal" data-bs-target="#cardModal">
                                 <img src="../assets/icons/comment.svg" class="me-1">Comments
                             </span>
-                            <span class="bottom-buttons icon-button" onclick="toggleActive(this)">
-                                <img src="../assets/icons/bookmark2.svg" class="me-1">Bookmark
-                            </span>
+                            
+                            <form method="POST">
+                                <span class="bottom-buttons icon-button" onclick="toggleActive(this)">
+                                     <!-- <img src="assets/icons/bookmark2.svg" class="me-1">Bookmark -->
+                                        <button type="submit" name="bookmark" class="bottom-buttons icon-button d-flex justify-content-between" style="background: none; border: none; padding: 0;">
+                                            <img src="../assets/icons/bookmark2.svg" class="me-1">Bookmark
+                                        </button>
+                                </span>
+                                 <input type="hidden" name="postID" value="' . $this->postID .'">
+                            </form>
                         </div>
                         <div class="d-flex">
                             <div class="star" onclick="setRating(1)">
@@ -95,11 +102,12 @@ class Post
                     </div>
                 </div>
             </div>';
-        }
+    }
 
 
-    public function showModal(){
-        return '<div class="modal fade" id="cardModal'. $this->postID .'" tabindex="-1"
+    public function showModal()
+    {
+        return '<div class="modal fade" id="cardModal' . $this->postID . '" tabindex="-1"
                         aria-labelledby="cardModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content" style="background-color: transparent; border: none;">
@@ -109,9 +117,9 @@ class Post
                                             <!-- user -->
                                             <div class="card-header d-flex align-items-center p-3"
                                                 style="border-color:white">
-                                                <img src="../assets/imgs/'. $this->profilePicture .'" class="profile-pic me-1">
+                                                <img src="../assets/imgs/' . $this->profilePicture . '" class="profile-pic me-1">
                                                 <div>
-                                                    <h6 class="mb-0 profile-text">'. $this->userName .'</h6>
+                                                    <h6 class="mb-0 profile-text">' . $this->userName . '</h6>
                                                 </div>
                                                 <div>
                                                     <button class="btn btn-primary ms-1 follow-btn">Follow</button>
@@ -123,17 +131,17 @@ class Post
                                                 </div>
                                             </div>
                                             <!-- uploaded media -->
-                                            <img src="../assets/imgs/'. $this->attachmentName .'" class="card-img-top">
+                                            <img src="../assets/imgs/' . $this->attachmentName . '" class="card-img-top">
                                             <!-- body -->
                                             <div class="card-body">
-                                                <h2 class="card-text title-text p-1">'. $this->title .'</h2>
+                                                <h2 class="card-text title-text p-1">' . $this->title . '</h2>
                                                 <div class="modal-body">
-                                                    <p class="card-text body-text px-2">'. $this->description .'</p>
+                                                    <p class="card-text body-text px-2">' . $this->description . '</p>
                                                 </div>
 
 
                                                 <button class="btn btn-primary follow-btn ms-1 mt-0 mb-2"
-                                                    style="background-color: #808080;">'. $this->tags .'</button>
+                                                    style="background-color: #808080;">' . $this->tags . '</button>
                                                 <!-- bottom buttons -->
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex">
@@ -193,14 +201,14 @@ class Post
                                                     <div class="card comment-card mb-2 body-text">
                                                         <div class="comment-card-header d-flex align-items-center ms-3 mt-3"
                                                             style="border-color:white">
-                                                            <img src="../assets/imgs/'. $this->profilePicture .'"
+                                                            <img src="../assets/imgs/' . $this->profilePicture . '"
                                                                 class="profile-pic me-1">
                                                             <div>
-                                                                <h6 class="mb-0 profile-text">'. $this->userName .'
+                                                                <h6 class="mb-0 profile-text">' . $this->userName . '
                                                                 </h6>
                                                             </div>
                                                         </div>
-                                                        <p class="ms-5 me-3 p-2">'. $this->comment .'</p>
+                                                        <p class="ms-5 me-3 p-2">' . $this->comment . '</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -215,4 +223,3 @@ class Post
 
 
 ?>
-
