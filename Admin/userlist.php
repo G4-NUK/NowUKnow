@@ -1,3 +1,11 @@
+<?php 
+include("../assets/shared/connect.php");
+
+
+$listQuery = "SELECT * from users WHERE userType = 'user'";
+$listQueryResult = executeQuery($listQuery);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,7 +82,7 @@
                     <ul>
                         <li><a href="adminDashBoard.html"><span class="nav-title">Dashboard</span></a></li>
                         <li><a href="userManager.html"><span class="nav-title">User Manager</span></a></li>
-                        <li><a href="userList.html"><span class="nav-title">User List</span></a></li>
+                        <li><a href="userlist.php"><span class="nav-title">User List</span></a></li>
                     </ul>
                 </div>
                 <div class="logout-container">
@@ -115,35 +123,24 @@
                                             </tr>
                                         </thead>
                                         <tbody class="table-light">
-                                            <tr>
-                                                <td>John Doe</td>
-                                                <td>jdoe</td>
-                                                <td>February 1, 2004</td>
-                                                <td>john@doe.com</td>
-                                                <td>1111111</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jane Doe</td>
-                                                <td>janedoe</td>
-                                                <td>January 1, 2004</td>
-                                                <td>jane@doe.com</td>
-                                                <td>1111111</td>
-                                                <!-- <td colspan='6'>No records found</td> -->
-                                            </tr>
-                                            <tr>
-                                                <td>Sean Doe</td>
-                                                <td>Sdoe</td>
-                                                <td>March 1, 2004</td>
-                                                <td>sean@doe.com</td>
-                                                <td>1111111</td>
-                                            </tr>
-                                            <tr>
-                                                <td>April Doe</td>
-                                                <td>Aprildoe</td>
-                                                <td>April 1, 2004</td>
-                                                <td>april@doe.com</td>
-                                                <td>1111111</td>
-                                            </tr>
+                                        <?php if (mysqli_num_rows($listQueryResult) > 0) {
+                                                while ($listRow = mysqli_fetch_assoc($listQueryResult)) {
+
+                                                    ?>
+                                                    <tr>
+                                                        <td><?php echo $listRow['firstName'] . ' '. $listRow['lastName'] ?></td>
+                                                        <td><?php echo $listRow['userName'] ?></td>
+                                                        </td>
+                                                        <td><?php echo $listRow['birthday'] ?></td>
+                                                        </td>
+                                                        <td><?php echo $listRow['email'] ?></td>
+                                                        </td>
+                                                        <td><?php echo $listRow['phoneNumber'] ?></td>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                            } ?>
 
                                         </tbody>
                                     </table>
