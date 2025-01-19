@@ -25,7 +25,7 @@ if (isset($_POST['btnLogin'])) {
     $_SESSION['birthday'] = "";
     $_SESSION['userType'] = "";
     $_SESSION['phoneNumber'] = "";
-    
+
 
     if (mysqli_num_rows($loginResult) > 0) {
         while ($user = mysqli_fetch_assoc($loginResult)) {
@@ -183,8 +183,7 @@ if (isset($_POST['btnLogin'])) {
                         <img src="assets/icons/Icon white.svg" alt="Logo" class="img-fluid logo">
                     </div>
                     <div class="NowUKnow">
-                        <img src="assets/icons/wordMark white small.svg" alt="WordMark Logo"
-                            class="img-fluid mb-4">
+                        <img src="assets/icons/wordMark white small.svg" alt="WordMark Logo" class="img-fluid mb-4">
                     </div>
 
                     <div class="col-lg-12 col-12 text-center">
@@ -214,7 +213,9 @@ if (isset($_POST['btnLogin'])) {
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" class="form-control" name="password" required>
+                            <input type="password" id="password" class="form-control" name="password" required
+                                pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
+                                title="Password must be at least 8 characters long, contain at least one letter, one number, and one special character (!@#$%^&*).">
                         </div>
                         <div class="d-flex justify-content-between">
                             <a href="forgotPw.html" class="text ms-auto" style="color: aliceblue;">Forgot Password?</a>
