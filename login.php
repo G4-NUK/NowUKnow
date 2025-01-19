@@ -213,9 +213,7 @@ if (isset($_POST['btnLogin'])) {
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" class="form-control" name="password" required
-                                pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
-                                title="Password must be at least 8 characters long, contain at least one letter, one number, and one special character (!@#$%^&*).">
+                            <input type="password" id="password" class="form-control" name="password" required>
                         </div>
                         <div class="d-flex justify-content-between">
                             <a href="forgotPw.html" class="text ms-auto" style="color: aliceblue;">Forgot Password?</a>
