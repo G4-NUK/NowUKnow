@@ -133,7 +133,7 @@ while ($bookmark = mysqli_fetch_assoc($bookmarkQueryResult)) {
                 <div class="sidebar">
                     <ul>
                         <li>
-                            <a href="index.php"
+                            <a href="users/index.php"
                                 style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #06080F;">
                                 <i class="fa-solid fa-house nav-icon" style="font-size: 24px; color: #06080F;"></i>
                                 <span class="nav-title"

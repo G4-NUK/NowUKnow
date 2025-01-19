@@ -79,7 +79,7 @@ class Post
                                             <img src="../assets/icons/bookmark2.svg" class="me-1">Bookmark
                                         </button>
                                 </span>
-                                 <input type="hidden" name="postID" value="' . $this->postID .'">
+                                 <input type="hidden" name="postID" value="' . $this->postID . '">
                             </form>
                         </div>
                         <div class="d-flex">
@@ -149,10 +149,14 @@ class Post
                                                             onclick="toggleCommentInput(this)">
                                                             <img src="../assets/icons/comment.svg" class="me-1">Comment
                                                         </span>
-                                                        <span class="bottom-buttons icon-button"
-                                                            onclick="toggleActive(this)">
-                                                            <img src="../assets/icons/bookmark2.svg" class="me-1">Bookmark
-                                                        </span>
+                                                        <form method="POST">
+                                                            <span class="bottom-buttons icon-button" onclick="toggleActive(this)">
+                                                              <button type="submit" name="bookmark" class="bottom-buttons icon-button d-flex justify-content-between" style="background: none; border: none; padding: 0;">
+                                                                 <img src="../assets/icons/bookmark2.svg" class="me-1">Bookmark
+                                                             </button>
+                                                            </span>
+                                                         <input type="hidden" name="postID" value="' . $this->postID . '">
+                                                        </form>
                                                     </div>
                                                     <div class="d-flex">
                                                         <button class="btn btn-primary follow-btn me-2 button-text"
