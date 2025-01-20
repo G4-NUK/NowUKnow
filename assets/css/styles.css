@@ -555,10 +555,6 @@ body {
     text-decoration: underline;
 }
 
-.content {
-    height: 200vh;
-    padding-top: 20px;
-}
 
 .middle-column .navbar {
     margin-top: 0;
