@@ -15,7 +15,7 @@ if (isset($_GET['userID']) && !isset($_SESSION['userID'])) {
 $userID = $_SESSION['userID'];
 
 if ($_SESSION['userID'] == "") {
-    header("Location: ../login.php");
+    header("Location: login.php");
 }
 
 ?>
@@ -174,7 +174,7 @@ if ($_SESSION['userID'] == "") {
                 <div class="middle-search-bar">
                     <input type="text" class="form-control" placeholder="Search...">
                 </div>
-                </nav>
+            
                 <nav class="navbar navbar-expand-md navbar-light bg-light mb-3">
                     <div class="container">
                         <ul class="navbar-nav mx-auto">
