@@ -2,10 +2,10 @@
 include("assets/shared/connect.php");
 
 session_start();
-session_destroy();
-session_start();
-$error = "";
+session_destroy(); 
+session_start();  
 
+$error = "";
 
 if (isset($_POST['btnLogin'])) {
     $username = $_POST['username'];
@@ -14,8 +14,9 @@ if (isset($_POST['btnLogin'])) {
     $username = str_replace('\'', '', $username);
     $password = str_replace('\'', '', $password);
 
-    $loginQuery = "SELECT * FROM users WHERE userName = '$username' AND password = '$password'";
-    $loginResult = executeQuery($loginQuery);
+    // Check if the username exists
+    $userCheckQuery = "SELECT * FROM users WHERE userName = '$username'";
+    $userCheckResult = executeQuery($userCheckQuery);
 
     $_SESSION['userID'] = "";
     $_SESSION['firstName'] = "";
@@ -26,23 +27,41 @@ if (isset($_POST['btnLogin'])) {
     $_SESSION['userType'] = "";
     $_SESSION['phoneNumber'] = "";
 
+    if (mysqli_num_rows($userCheckResult) > 0) {
+        // Username exists, check the password
+        $loginQuery = "SELECT * FROM users WHERE userName = '$username' AND password = '$password'";
+        $loginResult = executeQuery($loginQuery);
 
-    if (mysqli_num_rows($loginResult) > 0) {
-        while ($user = mysqli_fetch_assoc($loginResult)) {
-            $_SESSION['userID'] = $user['userID'];
-            $_SESSION['firstName'] = $user['firstName'];
-            $_SESSION['lastName'] = $user['lastName'];
-            $_SESSION['userName'] = $user['userName'];
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['birthday'] = $user['birthday'];
-            $_SESSION['userType'] = $user['userType'];
-            $_SESSION['phoneNumber'] = $user['phoneNumber'];
-            header("Location: users/index.php?userID=" . $_SESSION['userID']);
+        if (mysqli_num_rows($loginResult) > 0) {
+            // Successful login
+            while ($user = mysqli_fetch_assoc($loginResult)) {
+                $_SESSION['userID'] = $user['userID'];
+                $_SESSION['firstName'] = $user['firstName'];
+                $_SESSION['lastName'] = $user['lastName'];
+                $_SESSION['userName'] = $user['userName'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['birthday'] = $user['birthday'];
+                $_SESSION['userType'] = $user['userType'];
+                $_SESSION['phoneNumber'] = $user['phoneNumber'];
+
+                if ($_SESSION['userType'] == 'admin') {
+                    header("Location: Admin/index.php");
+                } else {
+                    header("Location: index.php?userID=" . $_SESSION['userID']);
+                }
+                exit();
+            }
+        } else {
+            // Incorrect password
+            $error = "INCORRECT PASSWORD";
         }
     } else {
-        $error = "No User";
+        // No user found
+        $error = "NO USER";
     }
 }
+
+
 ?>
 
 <!doctype html>
@@ -171,6 +190,25 @@ if (isset($_POST['btnLogin'])) {
             height: 400px;
             margin: 0 auto;
         }
+
+        .alert {
+            border-radius: 200px;
+            width: 100%;
+            max-width: 300px;
+            height: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            /* margin-top: 40px; */
+            display: block;
+            background-color: transparent;
+            border: none;
+            color: #ff6b6b;
+            /* Keeps the text color as red */
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+
+        }
     </style>
 </head>
 
@@ -200,11 +238,6 @@ if (isset($_POST['btnLogin'])) {
 
             <div class="col-lg-6 col-12 p-0 d-flex align-items-center justify-content-center">
                 <div class="card">
-                    <?php if ($error == "NO USER") { ?>
-                        <div class="alert alert-danger mb-3" role="alert">
-                            No user found
-                        </div>
-                    <?php } ?>
                     <div class="h3 my-4 text-center loginTitle">Login</div>
                     <form method="POST" id="loginForm">
                         <div class="mb-3">
@@ -215,10 +248,24 @@ if (isset($_POST['btnLogin'])) {
                             <label for="password" class="form-label">Password</label>
                             <input type="password" id="password" class="form-control" name="password" required>
                         </div>
+                        <?php if (isset($error)) { ?>
+
+                            <?php if ($error == "NO USER") { ?>
+                                <div class="alert alert-danger text-center rounded-5" role="alert">
+                                    No user found.
+                                </div>
+                            <?php } elseif ($error == "INCORRECT PASSWORD") { ?>
+                                <div class="alert alert-danger text-center rounded-5" role="alert">
+                                    Incorrect password! Please try again.
+                                </div>
+                            <?php } ?>
+                        
+                        <?php } ?>
+
                         <div class="d-flex justify-content-between">
                             <a href="forgotPw.html" class="text ms-auto" style="color: aliceblue;">Forgot Password?</a>
                         </div>
-                        <div class="mt-4">
+                        <div class="mt-1">
                             <button class="btn btnLogin mb-3 customButtonText" name="btnLogin"
                                 type="submit">Login</button>
                             <button type="button" class="btn btnSignUp customButtonText"
@@ -227,6 +274,7 @@ if (isset($_POST['btnLogin'])) {
                     </form>
                 </div>
             </div>
+
 
             <div class="col-lg-6 col-12 text-center">
                 <div class="info2">
@@ -243,7 +291,7 @@ if (isset($_POST['btnLogin'])) {
     <!-- Modal in learn more -->
     <div class="modal fade" id="learnMore" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="learnMoreLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="learnMoreLabel">NowUKnow</h1>
