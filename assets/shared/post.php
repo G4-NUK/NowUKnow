@@ -1,17 +1,28 @@
 <?php
+
+if (isset($_GET['userID']) && !isset($_SESSION['userID'])) {
+    $_SESSION['userID'] = $_GET['userID']; 
+}
+
+$userID = $_SESSION['userID'];
+
     // array for population of posts
     $postsList = array();
 
     // Query for Post
-    $postQuery = "SELECT posts.postID, users.userName, users.profilePicture, posts.title, posts.description, tags.tags AS tags,
-                    tags.tagImg, attachments.attachmentName, attachments.attachmentPath, ratings.ratingValue AS rating, 
-                    comments.content AS comment 
-                    FROM users 
-                    LEFT JOIN posts ON users.userID = posts.userID 
-                    LEFT JOIN attachments ON posts.postID = attachments.postID 
-                    LEFT JOIN tags ON posts.tagID = tags.tagID 
-                    LEFT JOIN ratings ON posts.postID = ratings.postID 
-                    LEFT JOIN comments ON posts.postID = comments.postID 
+    $postQuery = "SELECT 
+                        posts.postID, 
+                        users.userName, 
+                        users.profilePicture, 
+                        posts.title, 
+                        posts.description, 
+                        posts.attachment, 
+                        tags.tags AS tags, 
+                        ratings.ratingValue AS rating
+                    FROM users
+                    LEFT JOIN posts ON users.userID = posts.userID
+                    LEFT JOIN tags ON posts.tagID = tags.tagID
+                    LEFT JOIN ratings ON posts.postID = ratings.postID
                     WHERE users.userID = posts.userID
                     ORDER BY posts.postID DESC;";
 
@@ -24,13 +35,12 @@
             $postRow['title'],
             $postRow['description'],
             $postRow['tags'],
-            $postRow['attachmentName'],
-            $postRow['attachmentPath'],
+            $postRow['attachment'],
             $postRow['userName'],
             $postRow['rating'],
-            $postRow['comment'],
+            null,
             $postRow['profilePicture'],
-            $postRow['tagImg']
+            null
         );
 
         array_push($postsList, $post);

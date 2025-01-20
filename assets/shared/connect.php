@@ -2,7 +2,7 @@
   $dbhost = "localhost";
 	$dbuser = "root";
 	$dbpass = "";
-	$db = "testdb"; // this is a mockup outdated database, change the database name according to your updated mockup database or we will use our main database
+	$db = "nowuknow"; // this is a mockup outdated database, change the database name according to your updated mockup database or we will use our main database
 
 	$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 
